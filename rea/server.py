@@ -6,6 +6,8 @@ Serves only ``rea/viewer`` to the browser and exposes the dossier API:
     GET  /api/health
     GET  /api/probes                     probe catalogue and ladders
     GET  /api/playbook                   instructions, guides, prompts, ideas, crew
+    GET  /api/crew                       delivery personas, investigation lenses, lanes
+    POST /api/crew/plan                  crew-led route around a goal
     POST /api/plan                       build a read-only autonomy route
     GET  /api/revenue/models             productised revenue routes
     POST /api/revenue/scan               live public demand scan
@@ -68,6 +70,7 @@ import executor
 import improvements
 import mailroom
 import media
+import mission
 import playbook
 import revenue
 import studio
@@ -134,7 +137,18 @@ class REAHandler(SimpleHTTPRequestHandler):
                 "hints": engine.NEXT_HINTS,
             })
         if path == "/api/playbook":
-            return self._json(playbook.payload())
+            book = playbook.payload()
+            staff = mission.roster()
+            book["personas"] = staff["personas"]
+            book["principles"] = staff["principles"]
+            book["counts"]["personas"] = staff["counts"]["personas"]
+            return self._json(book)
+        if path == "/api/crew":
+            if not self._local_only():
+                return self._json({"error": "the Crew desk is local-only"}, 403)
+            staff = mission.roster()
+            staff["lanes"] = studio._crew_lanes()
+            return self._json(staff)
         if path == "/api/revenue/models":
             return self._json(revenue.models_payload())
         if path == "/api/media":
@@ -423,6 +437,21 @@ class REAHandler(SimpleHTTPRequestHandler):
             except ValueError as exc:
                 return self._json({"error": str(exc)}, 400)
             return self._json({"error": "not found"}, 404)
+        if path == "/api/crew/plan":
+            if not self._local_only():
+                return self._json({"error": "the Crew desk is local-only"}, 403)
+            try:
+                result = mission.plan(
+                    str(body.get("goal") or ""),
+                    str(body.get("target") or ""),
+                    kind=str(body.get("kind") or ""),
+                    depth=str(body.get("depth") or "standard"),
+                    sweep=bool(body.get("sweep", False)),
+                    network=bool(body.get("network", True)),
+                )
+            except ValueError as exc:
+                return self._json({"error": str(exc)}, 400)
+            return self._json(result)
         if path.startswith("/api/improvements"):
             if not self._local_only():
                 return self._json({"error": "Improve is local-only"}, 403)

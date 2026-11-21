@@ -965,6 +965,14 @@ class REATests(unittest.TestCase):
             self.assertIn('id="improve-suggest"', page)
             self.assertIn('id="improve-suggestions"', page)
             self.assertIn('id="improve-brief"', page)
+            self.assertIn('id="hub"', page)
+            self.assertIn('data-hub-scan="local"', page)
+            self.assertIn('data-hub-scan="wifi"', page)
+            self.assertIn('data-hub-scan="external"', page)
+            self.assertIn('id="hub-plan"', page)
+            self.assertIn('id="crew-personas"', page)
+            self.assertIn('id="crew-search"', page)
+            self.assertIn('id="crew-lens-hint"', page)
             self.assertIn("Smallest reversible change", page)
             self.assertIn("One dossier. One evidence file.", page)
             self.assertIn("data-view=\"studio\"", page)
@@ -995,6 +1003,7 @@ class REATests(unittest.TestCase):
                 book = json.loads(response.read().decode("utf-8"))
             self.assertGreaterEqual(len(book["ideas"]), 10)
             self.assertGreaterEqual(len(book["professions"]), 15)
+            self.assertGreaterEqual(len(book["personas"]), 12)
             self.assertEqual(len(book["range"]), 4)
 
             with urllib.request.urlopen(base + "/api/revenue/models", timeout=5) as response:
@@ -1562,3 +1571,35 @@ class ConnectTests(unittest.TestCase):
 
         with self.assertRaises(PermissionError):
             connect.devices({"authorized": False})
+
+class CrewMissionTests(unittest.TestCase):
+    def test_roster_exposes_delivery_crew_and_investigation_lenses(self):
+        import mission
+
+        roster = mission.roster()
+        self.assertGreaterEqual(len(roster["personas"]), 12)
+        self.assertEqual(len(roster["professions"]), 17)
+        self.assertEqual(roster["counts"]["crew"],
+                         len(roster["personas"]) + len(roster["professions"]))
+        self.assertTrue(roster["principles"])
+        self.assertTrue(all(person["name"] for person in roster["personas"]))
+
+    def test_mission_plan_keeps_the_operator_in_control(self):
+        import mission
+
+        result = mission.plan("Find the local alarm interface", "wifi",
+                              kind="wifi", sweep=False)
+        self.assertEqual(result["plan"]["kind"], "wifi")
+        self.assertEqual(result["crew"]["lead"]["id"], "mission-controller")
+        self.assertTrue(any(lens["id"] == "protocol"
+                            for lens in result["crew"]["lenses"]))
+        self.assertFalse(result["plan"]["sweep"])
+        self.assertTrue(result["run"]["requires_authorisation"])
+        self.assertIn("Stop conditions", result["prompt"])
+        self.assertIn("Initiator: you", result["prompt"])
+
+    def test_mission_plan_refuses_public_lan_ranges(self):
+        import mission
+
+        with self.assertRaises(ValueError):
+            mission.plan("scan a public range", "8.8.8.0/24", kind="wifi")

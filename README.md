@@ -21,7 +21,7 @@ Point it at something you own, map the seam where behaviour can change, then mak
 
 <img src="https://img.shields.io/badge/python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.10+" />
 <img src="https://img.shields.io/badge/dependencies-stdlib_only-22c55e?style=for-the-badge" alt="Standard library only" />
-<img src="https://img.shields.io/badge/tests-39_passing-brightgreen?style=for-the-badge" alt="39 tests passing" />
+<img src="https://img.shields.io/badge/tests-42_passing-brightgreen?style=for-the-badge" alt="42 tests passing" />
 <img src="https://img.shields.io/badge/network-loopback_only-0ea5e9?style=for-the-badge" alt="Loopback only" />
 <img src="https://img.shields.io/badge/targets-authorised_only-f6ca70?style=for-the-badge" alt="Authorised targets only" />
 <img src="https://img.shields.io/badge/account-none-6b7280?style=for-the-badge" alt="No account" />
@@ -130,6 +130,25 @@ It never asks for a password, PIN or token, never attempts a login, never change
 
 ---
 
+## 🧭 Command desk: you initiate, the crew routes
+
+The Engine Room opens with a crew command desk and three scan cards:
+
+| Surface | What it runs | What it never does |
+|---|---|---|
+| **Files & folders** | Local surface, manifest, code, history and artifact probes on one path | No write, execution or upload |
+| **WiFi & LAN** | Passive adapter, address, gateway, DNS and neighbour read; optional bounded ICMP sweep | No port scan, credentials or device changes |
+| **External** | DNS, TLS certificate, HTTP headers and port 80 redirect for one named host | No public ranges or unnamed targets |
+
+The **Crew** tab now shows the full bench: 12 delivery personas (Mission Controller, Project Manager, Red Team, Research Analyst, Architect, and the rest) plus 17 investigation lenses. Use **Give the crew a goal** to name the outcome and the target. `/api/crew/plan` returns the accountable lead, the specialist lenses, the probe route and the stop rules without contacting anything. Nothing runs until you tick the permission box and press **Run this route**.
+
+```text
+GET  /api/crew          delivery personas, investigation lenses and production lanes
+POST /api/crew/plan     lead, lenses, route and stop rules — read-only
+```
+
+---
+
 ## 🔍 The probe ladder
 
 | Family | What it records |
@@ -230,10 +249,10 @@ python -m unittest discover -s rea -p "test_*.py"
 ```
 
 ```text
-Ran 39 tests — OK
+Ran 42 tests — OK
 ```
 
-The suite covers the probe ladder, dossier shape, publication gate, mailroom consent, the Improve status machine, blocked class/level pairs, suggestion ranking, crew decision, the Connect safety refusals and loopback banner check, and a **real git apply → verify → rollback** cycle in a temporary repository.
+The suite covers the probe ladder, dossier shape, publication gate, mailroom consent, the Improve status machine, blocked class/level pairs, suggestion ranking, crew decision, the full crew roster and mission routing, the Connect safety refusals and loopback banner check, and a **real git apply → verify → rollback** cycle in a temporary repository.
 
 <details>
 <summary><b>API at a glance</b></summary>

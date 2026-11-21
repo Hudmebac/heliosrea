@@ -366,6 +366,69 @@
   @media(max-width:1100px){.revenue-grid{grid-template-columns:1fr}.revenue-manifest{height:auto}}
   @media(max-width:760px){.rev-two{grid-template-columns:1fr}.rev-offer-head .rev-price{white-space:normal}}
 
+
+  /* crew command hub */
+  .hub{border:1px solid rgba(98,232,255,.24);border-radius:14px;padding:16px;margin:0 0 16px;
+    background:radial-gradient(circle at 12% 0%,rgba(98,232,255,.09),transparent 42%),linear-gradient(150deg,rgba(14,22,32,.96),rgba(8,13,20,.96))}
+  .hub-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;flex-wrap:wrap;margin-bottom:14px}
+  .hub-head h2{margin:4px 0 5px;font-size:23px;font-weight:560;letter-spacing:-.02em}
+  .hub-lede{margin:0;max-width:720px;font-size:12.5px;line-height:1.65;color:var(--dim)}
+  .hub-consent{max-width:360px;padding:9px 11px;border:1px solid rgba(246,202,112,.28);border-radius:9px;background:rgba(246,202,112,.045)}
+  .hub-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+  .hub-card{border:1px solid var(--line);border-radius:11px;padding:13px;display:flex;flex-direction:column;gap:8px;background:rgba(255,255,255,.02);min-width:0}
+  .hub-card h3{margin:0;font-size:15px;font-weight:560;color:#eef8ff}
+  .hub-card p{margin:0;font-size:11.5px;line-height:1.55;color:var(--dim);flex:1}
+  .hub-badge{font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+  .hub-field{display:flex;gap:5px;min-width:0}
+  .hub-field input,.hub-field select{min-width:0;flex:1;font-size:11px;padding:7px 8px;border:1px solid var(--line);border-radius:6px;background:rgba(5,10,16,.75);color:var(--text)}
+  .hub-field select{flex:0 0 88px}
+  .hub-card .consent{font-size:10.5px}
+  .hub-card .btn{align-self:flex-start}
+  .hub-note{font:9.5px/1.5 var(--mono);color:var(--faint)}
+  .crew-desk{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:16px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(151,193,224,.13);align-items:start}
+  .crew-desk h3{margin:4px 0 5px;font-size:18px;font-weight:560}
+  .crew-desk p{margin:0;font-size:11.5px;line-height:1.6;color:var(--dim)}
+  .crew-desk-form{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+  .crew-desk-form .field{display:grid;gap:3px}
+  .crew-desk-form .field span{font:9px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+  .crew-desk-form .field input,.crew-desk-form .field select{width:100%;font-size:11px;padding:7px 8px;border:1px solid var(--line);border-radius:6px;background:rgba(5,10,16,.75);color:var(--text)}
+  .crew-desk-form .field.goal{grid-column:span 2}
+  .crew-desk-form .field.target{grid-column:span 2}
+  .crew-desk-form .btn{grid-column:span 1;align-self:end}
+  .crew-desk-form .tiny{grid-column:1/-1;margin:0}
+  .hub-result{margin-top:14px;border-top:1px solid rgba(151,193,224,.13);padding-top:14px}
+  .mission-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap;margin-bottom:11px}
+  .mission-top h3{margin:3px 0 4px;font-size:19px;font-weight:560}
+  .mission-top p{margin:0;font-size:11.5px;color:var(--dim)}
+  .mission-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:12px}
+  .mission-panel{border:1px solid var(--line);border-radius:10px;padding:11px 12px;background:rgba(255,255,255,.02);min-width:0}
+  .mission-panel h4{margin:0 0 2px;font-size:13px;font-weight:560;color:#eef8ff}
+  .mission-panel .who{font-size:10px;color:var(--faint);margin-bottom:7px}
+  .mission-person{display:grid;gap:2px;border-top:1px solid rgba(151,193,224,.1);padding:7px 0}
+  .mission-person:first-of-type{border-top:0}
+  .mission-person b{font-size:12px;color:#e7f4ff;font-weight:550}
+  .mission-person span{font-size:10.5px;line-height:1.45;color:var(--faint)}
+  .mission-route .plan-summary{margin:8px 0}
+  .mission-phase{border-top:1px solid rgba(151,193,224,.1);padding:7px 0}
+  .mission-phase b{display:block;font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+  .mission-phase span{display:block;font-size:10.5px;line-height:1.5;color:var(--dim)}
+  .mission-guardrails{margin-top:11px;border-left:3px solid rgba(246,202,112,.6);padding:7px 0 7px 10px;background:rgba(246,202,112,.035)}
+  .mission-guardrails b{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--gold)}
+  .mission-guardrails ul{margin:4px 0 0;padding-left:16px}
+  .mission-guardrails li{font-size:10.5px;line-height:1.5;color:var(--dim);margin:2px 0}
+  .mission-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+  .crew-tools{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin:0 0 14px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}
+  .crew-tools input{flex:1;min-width:220px}
+  .crew-counts{display:flex;gap:5px;flex-wrap:wrap}
+  .crew-section-head{display:flex;justify-content:space-between;gap:10px;align-items:baseline;margin:16px 0 8px;border-bottom:1px solid rgba(151,193,224,.14);padding-bottom:5px}
+  .crew-section-head h2{margin:0;font-size:18px;font-weight:560}
+  .crew-section-head p{margin:3px 0 0;font-size:11px;color:var(--faint)}
+  .persona-card{border-left:2px solid rgba(246,202,112,.55)}
+  .persona-card .prof-top h3{font-size:14.5px}
+  .persona-title{font:10px var(--mono);color:var(--gold);text-transform:uppercase;letter-spacing:.07em}
+  @media(max-width:900px){.hub-grid{grid-template-columns:1fr}.crew-desk,.mission-grid{grid-template-columns:1fr}.crew-desk-form{grid-template-columns:repeat(2,minmax(0,1fr))}.crew-desk-form .field.goal,.crew-desk-form .field.target{grid-column:span 2}}
+  @media(max-width:620px){.crew-desk-form{grid-template-columns:1fr}.crew-desk-form .field.goal,.crew-desk-form .field.target{grid-column:span 1}.hub-head{display:block}.hub-consent{margin-top:9px}}
+
   .engine-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-bottom:14px}
   .engine-metric{border:1px solid var(--line);border-radius:10px;padding:13px 14px;background:
     linear-gradient(150deg,rgba(14,22,32,.9),rgba(8,13,20,.9));min-width:0}
@@ -783,6 +846,83 @@
         or thin dossier gets through the gate. The crew works from the dossier, not a content calendar.
       </p>
     </div>
+
+
+    <section class="hub" id="hub" aria-labelledby="hub-title">
+      <div class="hub-head">
+        <div>
+          <span class="eyebrow">Crew command desk</span>
+          <h2 id="hub-title">You initiate. The crew does the work.</h2>
+          <p class="hub-lede">Pick a surface or describe the outcome you want. The crew chooses the route, names the lenses and records the evidence. Planning is read-only; a scan starts only when you press it.</p>
+        </div>
+        <label class="consent hub-consent"><input type="checkbox" id="hub-auth" />
+          <span>I own these targets or have <b>written permission</b> to inspect them.</span></label>
+      </div>
+      <div class="hub-grid">
+        <article class="hub-card">
+          <span class="hub-badge">01 · This machine</span>
+          <h3>Files &amp; folders</h3>
+          <p>Inventory a project, config set, binary or firmware image. Local reads only.</p>
+          <div class="hub-field">
+            <select id="hub-local-kind" aria-label="Local target kind">
+              <option value="folder">Folder</option>
+              <option value="file">File</option>
+            </select>
+            <input id="hub-local-path" placeholder="C:\path\to\project" spellcheck="false" aria-label="Local path" />
+          </div>
+          <button class="btn gold" type="button" data-hub-scan="local">Scan local</button>
+          <span class="hub-note">No write, no execution, no upload.</span>
+        </article>
+        <article class="hub-card">
+          <span class="hub-badge">02 · This network</span>
+          <h3>WiFi &amp; LAN</h3>
+          <p>Read the adapter, addresses, gateway, DNS and neighbour table. The device sweep is optional and bounded.</p>
+          <label class="consent"><input type="checkbox" id="hub-sweep" />
+            <span>Include the bounded ICMP device sweep on my own /24.</span></label>
+          <button class="btn gold" type="button" data-hub-scan="wifi">Scan this network</button>
+          <span class="hub-note">No port scan, no credential attempt.</span>
+        </article>
+        <article class="hub-card">
+          <span class="hub-badge">03 · External</span>
+          <h3>Internet exposure</h3>
+          <p>Check one public host you control: DNS, TLS certificate, HTTP headers and the port 80 redirect.</p>
+          <div class="hub-field">
+            <input id="hub-external" placeholder="example.com or https://example.com" spellcheck="false" aria-label="External host" />
+          </div>
+          <button class="btn gold" type="button" data-hub-scan="external">Check external</button>
+          <span class="hub-note">Named host only. No public ranges.</span>
+        </article>
+      </div>
+      <div class="crew-desk">
+        <div class="crew-desk-copy">
+          <span class="eyebrow">Ask the crew</span>
+          <h3>Give the goal. The crew plans the move.</h3>
+          <p>You stay the initiator. The crew proposes the lead, the specialist lenses, the probe route and the stop conditions. Read the plan, then decide whether to run it.</p>
+        </div>
+        <div class="crew-desk-form">
+          <label class="field goal"><span>Goal</span><input id="hub-goal" placeholder="e.g. find the local interface for my alarm" maxlength="240" /></label>
+          <label class="field target"><span>Target</span><input id="hub-target" placeholder="path, wifi, or example.com" spellcheck="false" /></label>
+          <label class="field"><span>Surface</span><select id="hub-kind">
+            <option value="auto">auto-detect</option>
+            <option value="folder">local folder</option>
+            <option value="file">local file</option>
+            <option value="wifi">WiFi &amp; LAN</option>
+            <option value="internet">external host</option>
+            <option value="website">website</option>
+            <option value="repo">GitHub repo</option>
+            <option value="har">HAR capture</option>
+          </select></label>
+          <label class="field"><span>Depth</span><select id="hub-depth">
+            <option value="quick">quick</option>
+            <option value="standard" selected>standard</option>
+            <option value="deep">deep</option>
+          </select></label>
+          <button class="btn gold" type="button" id="hub-plan">Let the crew plan</button>
+          <p class="tiny" id="hub-plan-hint">Read-only plan. Nothing is contacted until you run it.</p>
+        </div>
+      </div>
+      <div id="hub-result" class="hub-result" hidden></div>
+    </section>
 
     <div class="engine-metrics" id="engine-metrics">
       <div class="engine-metric"><b>—</b><span>approved dossiers</span></div>
@@ -1381,6 +1521,7 @@
         deterministic: who pays, the probes to run, the edit surfaces, the risks and two ready prompts.
         No market size is invented.
       </p>
+      <span class="hint" id="idea-count"></span>
     </div>
     <section class="card revenue-cta">
       <div class="card-head">
@@ -1437,13 +1578,35 @@
   <section class="view" id="view-crew">
     <div class="page-head">
       <span class="eyebrow">The crew</span>
-      <h1>Every profession you listed, as a working lens</h1>
+      <h1>The whole crew. You direct it.</h1>
       <p>
-        These are the roles from your brief, mapped to what REA actually probes. Each card carries a
-        ready prompt so the lens can be handed to a person or an agent without rewriting the brief.
+        The delivery crew owns the mission, the build and the independent check. The investigation
+        lenses read the evidence and name the reversible move. You set the goal; the crew proposes
+        the lead, the route and the stop conditions.
       </p>
     </div>
+    <div class="crew-tools">
+      <div class="crew-counts" id="crew-counts"><span class="mini">loading roster</span></div>
+      <input id="crew-search" placeholder="Filter by name, stage, skill or surface" aria-label="Filter the crew" />
+      <button class="btn gold" type="button" data-command-crew>Give the crew a goal</button>
+    </div>
+    <div class="crew-section-head">
+      <div><span class="eyebrow">Delivery</span><h2>Delivery crew</h2>
+        <p>Accountable personas. One owner per task; Red Team verifies independently.</p></div>
+      <span class="hint" id="crew-persona-hint"></span>
+    </div>
+    <div class="prof-grid" id="crew-personas"></div>
+    <div class="crew-section-head">
+      <div><span class="eyebrow">Investigation</span><h2>Investigation lenses</h2>
+        <p>The specialist read of the evidence. Each card carries the questions and a ready prompt.</p></div>
+      <span class="hint" id="crew-lens-hint"></span>
+    </div>
     <div class="prof-grid" id="crew-grid"></div>
+    <div class="card" style="margin-top:15px">
+      <div class="card-head"><div><span class="eyebrow">Command</span><h2>You are the initiator</h2></div><span class="hint">crew-led</span></div>
+      <div class="card-body"><p class="tiny">Open the command desk, state the outcome and the target, and let the crew turn it into a route. The crew can plan without touching anything; a run still needs your explicit authorisation.</p>
+        <button class="btn gold" type="button" data-command-crew>Open the command desk</button></div>
+    </div>
   </section>
 </div>
 
@@ -1451,7 +1614,7 @@
 (function(){
   "use strict";
   const $ = (sel) => document.querySelector(sel);
-  const state = { id: null, timer: null, data: null, playbook: null, probes: null, brief: null, plan: null, planText: "", revenueModels: null, revenueOffer: null, revenueOfferText: "", revenueSignals: null, studio: null, studioPublication: null, improve: null, improveCandidates: [], improveDossier: null, improveSeams: [], improveSelected: null, improveSystem: "", improveIntervention: "", improveSuggestionId: "", improveSuggestions: [], improvePlans: [], history: [] };
+  const state = { id: null, timer: null, data: null, playbook: null, probes: null, brief: null, plan: null, planText: "", revenueModels: null, revenueOffer: null, revenueOfferText: "", revenueSignals: null, studio: null, studioPublication: null, improve: null, improveCandidates: [], improveDossier: null, improveSeams: [], improveSelected: null, improveSystem: "", improveIntervention: "", improveSuggestionId: "", improveSuggestions: [], improvePlans: [], history: [], mission: null };
   const STATUS_LABEL = { queued: "queued", running: "probing", complete: "complete", failed: "failed" };
   const ZOOM_KEY = "rea.zoom";
   const ZOOM_MIN = 0.9, ZOOM_MAX = 1.5, ZOOM_STEP = 0.05;
@@ -1977,6 +2140,213 @@
     }
   }
 
+  // -- crew command desk ---------------------------------------------------
+  function hubTarget() {
+    const typed = $("#hub-target").value.trim();
+    if (typed) return typed;
+    const local = $("#hub-local-path").value.trim();
+    if (local) { $("#hub-target").value = local; return local; }
+    const external = $("#hub-external").value.trim();
+    if (external) { $("#hub-target").value = external; return external; }
+    return "";
+  }
+
+  async function launchInvestigation(payload, success) {
+    banner("");
+    setBusy(true, "starting");
+    try {
+      const res = await fetch("/api/investigations", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        banner(data.error || ("Could not start the investigation (" + res.status + ")."));
+        return;
+      }
+      try { localStorage.setItem("rea.last", payload.target); } catch (err) { /* private mode */ }
+      $("#empty").hidden = true;
+      $("#dossier").hidden = false;
+      state.id = data.investigation.id;
+      await poll(state.id);
+      if (success) banner(success, true);
+    } catch (err) {
+      banner("Could not reach the REA server: " + err.message);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function runHubScan(mode) {
+    if (!$("#hub-auth").checked) {
+      banner("Tick the permission box first: only scan a device or network you own or may inspect.");
+      $("#hub-auth").focus();
+      return;
+    }
+    let target = "";
+    let kind = "";
+    let sweep = false;
+    let scope = "";
+    if (mode === "local") {
+      target = $("#hub-local-path").value.trim();
+      kind = $("#hub-local-kind").value;
+      if (!target) { banner("Enter a local folder or file path first."); $("#hub-local-path").focus(); return; }
+      scope = "Hub · local " + kind;
+    } else if (mode === "wifi") {
+      target = "wifi";
+      kind = "wifi";
+      sweep = $("#hub-sweep").checked;
+      scope = "Hub · this WiFi/LAN" + (sweep ? " · device sweep" : " · passive");
+    } else {
+      target = $("#hub-external").value.trim();
+      kind = "internet";
+      if (!target) { banner("Enter the public host you control first."); $("#hub-external").focus(); return; }
+      scope = "Hub · external exposure";
+    }
+    await launchInvestigation({
+      target, kind, authorized: true, network: true,
+      sweep, depth: "standard", scope
+    }, "Scan started. The dossier is live in Investigate.");
+  }
+
+  async function planMissionFromHub() {
+    const goal = $("#hub-goal").value.trim();
+    let target = hubTarget();
+    let kind = $("#hub-kind").value;
+    if (!goal) { banner("Tell the crew the outcome you want."); $("#hub-goal").focus(); return; }
+    if (!target) { banner("Add the target the crew should work on."); $("#hub-target").focus(); return; }
+    if (kind === "auto") {
+      if (target === "wifi") kind = "wifi";
+      else if (target === $("#hub-local-path").value.trim() && target) kind = $("#hub-local-kind").value;
+      else if (target === $("#hub-external").value.trim() && target) kind = "internet";
+      else if (/^(https?:\/\/|[a-z0-9.-]+\.[a-z]{2,})(\/|$)/i.test(target)) kind = "internet";
+      else kind = "auto";
+    }
+    $("#hub-target").value = target;
+    const button = $("#hub-plan");
+    if (button) { button.disabled = true; button.textContent = "Planning…"; }
+    $("#hub-plan-hint").textContent = "The crew is reading the surface and the route…";
+    try {
+      const res = await fetch("/api/crew/plan", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          goal, target, kind,
+          depth: $("#hub-depth").value,
+          sweep: $("#hub-sweep").checked
+        })
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        banner(data.error || "The crew could not plan that target.");
+        $("#hub-plan-hint").textContent = "Read-only plan. Nothing is contacted until you run it.";
+        return;
+      }
+      state.mission = data;
+      renderMission(data);
+      $("#hub-plan-hint").textContent = "Plan ready. Read it, then run it when you decide.";
+      banner("The crew has a plan. You still decide whether to run it.", true);
+    } catch (err) {
+      banner("Could not reach the REA server: " + err.message);
+    } finally {
+      if (button) { button.disabled = false; button.textContent = "Let the crew plan"; }
+    }
+  }
+
+  function renderMission(data) {
+    const plan = data.plan || {};
+    const crew = data.crew || {};
+    const lead = crew.lead || {};
+    const people = crew.personas || [];
+    const lenses = crew.lenses || [];
+    const counts = plan.counts || {};
+    const peopleHtml = people.map((person) =>
+      '<div class="mission-person"><b>' + esc(person.name) + '</b><span>' +
+        esc(person.title || "specialist") + ' · ' + esc(person.reason || person.purpose || "delivery support") +
+      '</span></div>'
+    ).join("");
+    const lensHtml = lenses.map((lens) =>
+      '<span class="mini" title="' + esc(lens.focus || "") + '">' + esc(lens.name) + '</span>'
+    ).join("");
+    const phases = (plan.phases || []).map((phase) =>
+      '<div class="mission-phase"><b>' + esc(phase.title) + ' · ' + esc(phase.count) + '</b><span>' +
+        (phase.steps || []).map((step) => esc(step.label)).join(" · ") +
+      '</span></div>'
+    ).join("");
+    const guards = (data.guardrails || []).map((item) => '<li>' + esc(item) + '</li>').join("");
+    $("#hub-result").hidden = false;
+    $("#hub-result").innerHTML =
+      '<div class="mission-top"><div><span class="eyebrow">Crew plan</span><h3>' + esc(data.goal || plan.target) +
+        '</h3><p>' + esc(plan.target) + ' · ' + esc(plan.kind_label || plan.kind) + ' · ' +
+        esc(plan.depth_label || plan.depth) + '</p></div>' +
+        '<span class="chip">' + esc(crew.count || (people.length + lenses.length + 1)) + ' crew</span></div>' +
+      '<div class="mission-grid"><div class="mission-panel">' +
+        '<h4>' + esc(lead.name || "Mission Controller") + '</h4>' +
+        '<div class="who">' + esc(lead.title || "lead") + (lead.reason ? ' · ' + esc(lead.reason) : '') + '</div>' +
+        (peopleHtml || '<p class="tiny">The crew is ready; no extra specialist is needed yet.</p>') +
+        '<div class="idea-probes" style="margin-top:8px">' + lensHtml + '</div>' +
+      '</div><div class="mission-panel mission-route">' +
+        '<h4>Route</h4><div class="who">' + esc(plan.summary || "") + '</div>' +
+        '<div class="plan-summary">' +
+          '<div class="plan-metric"><b>' + esc(counts.probes || 0) + '</b><span>probes</span></div>' +
+          '<div class="plan-metric"><b>' + esc(counts.phases || 0) + '</b><span>phases</span></div>' +
+          '<div class="plan-metric"><b>' + esc(counts.local || 0) + '</b><span>local</span></div>' +
+          '<div class="plan-metric"><b>' + esc(counts.network || 0) + '</b><span>network</span></div>' +
+        '</div>' + (phases || '<p class="tiny">No probe phase is needed for this target yet.</p>') +
+      '</div></div>' +
+      '<div class="mission-guardrails"><b>Stop rules</b><ul>' + guards + '</ul></div>' +
+      '<div class="mission-actions"><button class="btn gold" type="button" data-mission-run="1">Run this route</button>' +
+        '<button class="btn" type="button" data-copy-src="mission-brief">Copy crew brief</button>' +
+        '<button class="btn" type="button" data-command-crew>Change goal</button></div>' +
+      '<pre class="hidden-src" id="mission-brief">' + esc(data.prompt || "") + '</pre>';
+    $("#hub-result").scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  async function runMission() {
+    if (!state.mission) { banner("Ask the crew for a plan first."); return; }
+    if (!$("#hub-auth").checked) {
+      banner("Tick the permission box before running the crew route.");
+      $("#hub-auth").focus();
+      return;
+    }
+    const plan = state.mission.plan || {};
+    const run = state.mission.run || {};
+    const payload = Object.assign({}, run.payload || {}, {
+      target: plan.target || state.mission.target,
+      kind: plan.kind || state.mission.kind,
+      authorized: true,
+      network: plan.network !== false,
+      sweep: plan.sweep === true,
+      depth: plan.depth || "standard",
+      stage: (plan.stage && plan.stage.id) || "",
+      scope: ("Crew mission · " + (state.mission.goal || plan.target)).slice(0, 300)
+    });
+    await launchInvestigation(payload, "Crew route started. The dossier is live in Investigate.");
+  }
+
+  function commandCrew() {
+    showView("engine");
+    const goal = $("#hub-goal");
+    if (goal) {
+      goal.scrollIntoView({ behavior: "smooth", block: "center" });
+      goal.focus();
+    }
+  }
+
+  function personaBrief(persona) {
+    const lines = [
+      persona.name + " · " + (persona.title || ""),
+      "Stage: " + (persona.stage || ""),
+      "Purpose: " + (persona.purpose || ""),
+      "Skills: " + (persona.skills || []).join(", "),
+      "Deliverables: " + (persona.deliverables || []).join(", "),
+      "Guardrails: " + (persona.guardrails || []).join(" "),
+      "Handoff: " + (persona.handoff || "")
+    ];
+    return lines.join("\n");
+  }
+
   // -- playbook ------------------------------------------------------------
   function renderInstructions() {
     const items = (state.playbook && state.playbook.instructions) || [];
@@ -2496,22 +2866,51 @@
   }
 
   function renderCrew() {
-    const crew = (state.playbook && state.playbook.professions) || [];
-    $("#crew-grid").innerHTML = crew.map((profession) =>
+    const data = state.playbook || {};
+    const personas = data.personas || [];
+    const lenses = data.professions || [];
+    const query = ($("#crew-search").value || "").trim().toLowerCase();
+    const matcher = (values) => !query || values.some((value) =>
+      String(value == null ? "" : value).toLowerCase().includes(query));
+    const visiblePersonas = personas.filter((persona) =>
+      matcher([persona.name, persona.title, persona.stage, persona.purpose, ...(persona.skills || [])]));
+    const visibleLenses = lenses.filter((lens) =>
+      matcher([lens.name, lens.focus, lens.rea, ...(lens.tools || [])]));
+    $("#crew-counts").innerHTML =
+      '<span class="mini">' + personas.length + ' delivery</span>' +
+      '<span class="mini">' + lenses.length + ' lenses</span>' +
+      (query ? '<span class="mini">' + (visiblePersonas.length + visibleLenses.length) + ' match</span>' : "");
+    $("#crew-persona-hint").textContent = visiblePersonas.length + " showing";
+    $("#crew-lens-hint").textContent = visibleLenses.length + " showing";
+    $("#crew-personas").innerHTML = visiblePersonas.length ? visiblePersonas.map((persona) =>
+      '<article class="prof-card persona-card">' +
+        '<div class="prof-top"><div><h3>' + esc(persona.name) + '</h3><span class="persona-title">' +
+          esc(persona.title || persona.stage) + ' · ' + esc(persona.stage) + '</span></div>' +
+          '<button class="btn small" type="button" data-copy-src="persona-' + esc(persona.id) + '">Copy brief</button></div>' +
+        '<p>' + esc(persona.purpose) + '</p>' +
+        '<div class="idea-probes">' + (persona.skills || []).map((skill) =>
+          '<span class="mini">' + esc(skill) + '</span>').join("") + '</div>' +
+        '<p class="map"><b>Deliver:</b> ' + esc((persona.deliverables || []).join(" · ")) + '</p>' +
+        '<p class="map"><b>Guardrail:</b> ' + esc((persona.guardrails || [])[0] || "") + '</p>' +
+        '<p class="map"><b>Handoff:</b> ' + esc(persona.handoff) + '</p>' +
+        '<pre class="hidden-src" id="persona-' + esc(persona.id) + '">' + esc(personaBrief(persona)) + '</pre>' +
+      '</article>'
+    ).join("") : '<p class="tiny">No delivery persona matches that filter.</p>';
+    $("#crew-grid").innerHTML = visibleLenses.length ? visibleLenses.map((profession) =>
       '<article class="prof-card">' +
         '<div class="prof-top"><h3>' + esc(profession.name) + '</h3>' +
           '<button class="btn small" type="button" data-copy-src="crew-' + esc(profession.id) + '">Copy prompt</button></div>' +
         '<p>' + esc(profession.focus) + '</p>' +
         '<div class="prof-cols">' +
-          '<div><b>Ask</b><ul>' + profession.questions.map((q) => '<li>' + esc(q) + '</li>').join("") + '</ul></div>' +
-          '<div><b>Deliver</b><ul>' + profession.deliverables.map((d) => '<li>' + esc(d) + '</li>').join("") + '</ul></div>' +
+          '<div><b>Ask</b><ul>' + (profession.questions || []).map((q) => '<li>' + esc(q) + '</li>').join("") + '</ul></div>' +
+          '<div><b>Deliver</b><ul>' + (profession.deliverables || []).map((d) => '<li>' + esc(d) + '</li>').join("") + '</ul></div>' +
         '</div>' +
-        '<div class="idea-probes">' + profession.tools.map((tool) =>
+        '<div class="idea-probes">' + (profession.tools || []).map((tool) =>
           '<span class="mini">' + esc(tool) + '</span>').join("") + '</div>' +
         '<p class="map"><b>In REA:</b> ' + esc(profession.rea) + '</p>' +
         '<pre class="hidden-src" id="crew-' + esc(profession.id) + '">' + esc(profession.prompt) + '</pre>' +
       '</article>'
-    ).join("");
+    ).join("") : '<p class="tiny">No investigation lens matches that filter.</p>';
   }
 
   function renderAngles() {
@@ -2756,14 +3155,15 @@
       const res = await fetch("/api/playbook");
       if (!res.ok) throw new Error("HTTP " + res.status);
       state.playbook = await res.json();
-      renderInstructions();
-      renderGuides();
-      renderPrompts();
-      renderRange();
-      renderIdeas();
-      renderCrew();
-      renderAngles();
-      renderAutonomyMeta();
+      const renderers = [
+        ["instructions", renderInstructions], ["guides", renderGuides],
+        ["prompts", renderPrompts], ["range", renderRange],
+        ["ideas", renderIdeas], ["crew", renderCrew],
+        ["angles", renderAngles], ["autonomy", renderAutonomyMeta]
+      ];
+      renderers.forEach(([name, render]) => {
+        try { render(); } catch (err) { console.error("REA render " + name, err); }
+      });
     } catch (err) {
       $("#guides").innerHTML = '<p class="tiny">Playbook unavailable: ' + esc(err.message) + '</p>';
     }
@@ -3713,6 +4113,10 @@
 
   // -- events --------------------------------------------------------------
   document.addEventListener("click", (event) => {
+    const hubScan = event.target.closest("[data-hub-scan]");
+    if (hubScan) { runHubScan(hubScan.dataset.hubScan); return; }
+    if (event.target.closest("[data-command-crew]")) { commandCrew(); return; }
+    if (event.target.closest("[data-mission-run]")) { runMission(); return; }
     const view = event.target.closest("[data-view]");
     if (view) { showView(view.dataset.view); return; }
     const fill = event.target.closest("[data-fill]");
@@ -3785,6 +4189,8 @@
   });
 
   $("#form").addEventListener("submit", (event) => { event.preventDefault(); investigate(); });
+  $("#hub-plan").addEventListener("click", planMissionFromHub);
+  $("#crew-search").addEventListener("input", renderCrew);
   $("#kind").addEventListener("change", () => {
     const kind = $("#kind").value;
     $("#range-stage").value = "";
