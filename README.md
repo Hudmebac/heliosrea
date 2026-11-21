@@ -21,7 +21,7 @@ Point it at something you own, map the seam where behaviour can change, then mak
 
 <img src="https://img.shields.io/badge/python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.10+" />
 <img src="https://img.shields.io/badge/dependencies-stdlib_only-22c55e?style=for-the-badge" alt="Standard library only" />
-<img src="https://img.shields.io/badge/tests-35_passing-brightgreen?style=for-the-badge" alt="35 tests passing" />
+<img src="https://img.shields.io/badge/tests-39_passing-brightgreen?style=for-the-badge" alt="39 tests passing" />
 <img src="https://img.shields.io/badge/network-loopback_only-0ea5e9?style=for-the-badge" alt="Loopback only" />
 <img src="https://img.shields.io/badge/targets-authorised_only-f6ca70?style=for-the-badge" alt="Authorised targets only" />
 <img src="https://img.shields.io/badge/account-none-6b7280?style=for-the-badge" alt="No account" />
@@ -96,15 +96,37 @@ No account. No API key. No cloud dependency. No magic.
 
 ---
 
-## 🖥️ Three surfaces, one application
+## 🖥️ Three surfaces, plus a local Connect workspace
 
 | Surface | Where | What it is | Leaves the machine? |
 |---|---|---|---|
 | **Engine Room** | `/` | Private control surface: investigations, dossiers, Improve plans | No — loopback only |
 | **Website** | `/published/` | Static evidence site generated from dossiers that passed the gate | Only when you deploy it |
 | **Mailroom** | `/mailroom/` | Owner console: contacts, consent, CSV export, monthly issues | No — local store, loopback only |
+| **Connect** | `/connect/` | Guided device intake inside the Engine Room: crew questions, one-host LAN check, saved profile and runbook | No — loopback only |
 
-One process serves all three. One codebase. One data model.
+One process serves all of them. One codebase. One data model.
+
+---
+
+## 🔌 Connect: bring a local device in
+
+Say **“I want to connect my home alarm”**. Open **Connect**, pick *Home alarm*, enter the panel's LAN address, and tick the permission box. The crew asks the questions a careful operator would ask — make and model, controlling app or hub, what you want REA to do, wired or Wi-Fi, whether a local API is enabled, and whether it is professionally monitored.
+
+Then:
+
+1. **Ask the crew** returns the questions still open, the 12 documented ports it would check, and the honest routes (local web, RTSP, MQTT, hub, vendor app).
+2. **Run safe check** makes one unauthenticated `GET /` on one private host and records what answered: port, service, banner title and server.
+3. **Save connection + runbook** writes a profile to `rea/data/connections/` (gitignored) with the answers, findings, change steps and a one-command rollback.
+
+It never asks for a password, PIN or token, never attempts a login, never changes the device, and refuses public addresses, demos and fixtures. If the panel has no supported local interface, the crew says so and routes you to the vendor app or hub instead of a port trick.
+
+```text
+/connect/            local workspace (loopback only)
+/api/connect/plan    questions, ports and routes — no probe
+/api/connect/scan    one host, fixed ports, no credentials
+/api/connect/save    profile + runbook; delete is the rollback
+```
 
 ---
 
@@ -208,10 +230,10 @@ python -m unittest discover -s rea -p "test_*.py"
 ```
 
 ```text
-Ran 35 tests — OK
+Ran 39 tests — OK
 ```
 
-The suite covers the probe ladder, dossier shape, publication gate, mailroom consent, the Improve status machine, blocked class/level pairs, suggestion ranking, crew decision, and a **real git apply → verify → rollback** cycle in a temporary repository.
+The suite covers the probe ladder, dossier shape, publication gate, mailroom consent, the Improve status machine, blocked class/level pairs, suggestion ranking, crew decision, the Connect safety refusals and loopback banner check, and a **real git apply → verify → rollback** cycle in a temporary repository.
 
 <details>
 <summary><b>API at a glance</b></summary>

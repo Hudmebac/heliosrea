@@ -25,6 +25,14 @@ Serves only ``rea/viewer`` to the browser and exposes the dossier API:
     GET  /api/investigations/<id>        one dossier (poll while running)
     GET  /api/investigations/<id>/report.md
     POST /api/investigations             start one (requires authorisation)
+    GET  /connect/                       local Connect workspace, loopback only
+    GET  /api/connect                    device catalogue and saved profiles
+    GET  /api/connect/<id>/runbook.md    saved profile runbook
+    POST /api/connect/plan               crew questions, ports and routes
+    POST /api/connect/scan               one-host LAN check, no credentials
+    POST /api/connect/devices            neighbour cache plus bounded sweep
+    POST /api/connect/save               save a profile and runbook
+    POST /api/connect/delete             remove a profile and runbook
     GET  /api/improvements               local plans and suggestions, loopback only
     GET  /api/improvements/<id>/brief.md
     POST /api/improvements/suggest       suggest improvements from a brief
@@ -53,6 +61,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, quote, unquote, urlparse
 
 import autonomy
+import connect
 import decision
 import engine
 import executor
@@ -142,6 +151,31 @@ class REAHandler(SimpleHTTPRequestHandler):
             return self._json(studio.payload())
         if path == "/api/studio/publications":
             return self._json({"publications": studio.published()})
+        if path in {"/connect", "/connect/"}:
+            if not self._local_only():
+                return self._json({"error": "Connect is local-only"}, 403)
+            return self._serve_viewer_file("connect.html")
+        if path == "/api/connect":
+            if not self._local_only():
+                return self._json({"error": "Connect is local-only"}, 403)
+            return self._json({"catalogue": connect.catalogue(),
+                               "connections": connect.list_connections()})
+        match = re.fullmatch(r"/api/connect/([A-Za-z0-9\-]+)/runbook\.md", path)
+        if match:
+            if not self._local_only():
+                return self._json({"error": "Connect is local-only"}, 403)
+            record = connect.get(match.group(1))
+            if not record:
+                return self._json({"error": "connection not found"}, 404)
+            payload = connect.runbook(record).encode("utf-8")
+            self.send_response(200)
+            self.send_header("Content-Type", "text/markdown; charset=utf-8")
+            self.send_header("Content-Disposition",
+                             f'attachment; filename="{record["id"]}.md"')
+            self.send_header("Content-Length", str(len(payload)))
+            self.end_headers()
+            self.wfile.write(payload)
+            return
         if path.startswith("/api/improvements"):
             if not self._local_only():
                 return self._json({"error": "Improve is local-only"}, 403)
@@ -362,6 +396,33 @@ class REAHandler(SimpleHTTPRequestHandler):
             return self._newsletter_subscribe(body)
         if path.startswith("/api/mailroom"):
             return self._mailroom_post(path, body)
+        if path.startswith("/api/connect"):
+            if not self._local_only():
+                return self._json({"error": "Connect is local-only"}, 403)
+            try:
+                if path == "/api/connect/devices":
+                    return self._json(connect.devices(body))
+                if path == "/api/connect/plan":
+                    return self._json(connect.plan(body))
+                if path == "/api/connect/scan":
+                    return self._json(connect.scan(body))
+                if path == "/api/connect/save":
+                    return self._json(connect.save(body), 201)
+                if path == "/api/connect/delete":
+                    return self._json(connect.delete(body.get("id")))
+                if path == "/api/connect/test":
+                    record = connect.get(body.get("id"))
+                    if not record:
+                        return self._json({"error": "connection not found"}, 404)
+                    return self._json(connect.scan({
+                        "device": record.get("device"), "host": record.get("host"),
+                        "answers": record.get("answers") or {}, "authorized": True,
+                    }))
+            except PermissionError as exc:
+                return self._json({"error": str(exc)}, 403)
+            except ValueError as exc:
+                return self._json({"error": str(exc)}, 400)
+            return self._json({"error": "not found"}, 404)
         if path.startswith("/api/improvements"):
             if not self._local_only():
                 return self._json({"error": "Improve is local-only"}, 403)

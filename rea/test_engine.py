@@ -1480,3 +1480,85 @@ class PublicSiteHygieneTest(unittest.TestCase):
             self.assertNotIn("404.html", sitemap)
             robots = (Path(tmp) / "robots.txt").read_text("utf-8")
             self.assertIn("Sitemap: https://heliosrea.netlify.app/sitemap.xml", robots)
+
+
+class ConnectTests(unittest.TestCase):
+    def test_plan_and_scan_refusals(self):
+        import connect
+
+        plan = connect.plan({
+            "device": "home-alarm", "host": "192.168.1.50", "authorized": True,
+            "answers": {"brand": "Pyronix Enforcer"},
+        })
+        self.assertIn("brand", plan["answers"])
+        self.assertTrue(plan["ports"])
+        self.assertTrue(plan["crew"])
+        self.assertTrue(plan["ready"])
+        with self.assertRaises(PermissionError):
+            connect.scan({"device": "home-alarm", "host": "192.168.1.50", "authorized": False})
+        with self.assertRaises(ValueError):
+            connect.scan({"device": "home-alarm", "host": "8.8.8.8", "authorized": True})
+        with self.assertRaises(ValueError):
+            connect.scan({"device": "home-alarm", "host": "example.com", "authorized": True})
+
+    def test_scan_finds_loopback_http_banner(self):
+        import http.server
+        import threading
+
+        import connect
+
+        class Handler(http.server.BaseHTTPRequestHandler):
+            def do_GET(self):
+                body = b"<html><title>Alarm panel</title>ok</html>"
+                self.send_response(200)
+                self.send_header("Content-Type", "text/html")
+                self.send_header("Server", "TestPanel/1.0")
+                self.send_header("Content-Length", str(len(body)))
+                self.end_headers()
+                self.wfile.write(body)
+
+            def log_message(self, *args):
+                pass
+
+        server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        try:
+            result = connect.scan({
+                "device": "home-alarm", "host": "127.0.0.1", "authorized": True,
+                "ports": [server.server_port],
+            })
+            self.assertEqual(result["open_ports"][0]["port"], server.server_port)
+            self.assertIn("Alarm panel", result["open_ports"][0]["banner"]["title"])
+        finally:
+            server.shutdown()
+            server.server_close()
+
+    def test_save_list_runbook_and_delete(self):
+        import pathlib
+        import tempfile
+
+        import connect
+
+        with tempfile.TemporaryDirectory() as tmp:
+            store = pathlib.Path(tmp)
+            saved = connect.save({
+                "device": "home-alarm", "host": "192.168.1.50", "authorized": True,
+                "answers": {"brand": "Pyronix"},
+                "scan": {"at": "now", "ports_checked": [80],
+                         "open_ports": [{"port": 80, "service": "HTTP", "open": True,
+                                         "banner": {"title": "Panel"}}],
+                         "findings": [], "routes": []},
+            }, store=store)
+            record_id = saved["connection"]["id"]
+            self.assertTrue((store / f"{record_id}.md").exists())
+            self.assertIn("Rollback", saved["runbook"])
+            self.assertEqual(len(connect.list_connections(store)), 1)
+            connect.delete(record_id, store=store)
+            self.assertEqual(connect.list_connections(store), [])
+
+    def test_devices_requires_permission(self):
+        import connect
+
+        with self.assertRaises(PermissionError):
+            connect.devices({"authorized": False})
