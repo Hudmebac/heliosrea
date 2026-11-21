@@ -1205,6 +1205,11 @@ class REATests(unittest.TestCase):
                 published_index = response.read().decode("utf-8")
             self.assertIn(publication["title"], published_index)
             self.assertIn("The Teardown Room", published_index)
+            self.assertIn('href="download/"', published_index)
+            download_page = (studio.SITE_DIR / "download" / "index.html").read_text(encoding="utf-8")
+            self.assertIn("github.com/Hudmebac/heliosrea", download_page)
+            self.assertIn("python rea/server.py", download_page)
+            self.assertIn("REA.bat", download_page)
 
             brief_request = urllib.request.Request(
                 base + "/api/ideas/generate",

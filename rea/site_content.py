@@ -21,6 +21,8 @@ import playbook
 STRIPE = media.STRIPE
 BRAND = media.CHANNEL
 CONTACT_EMAIL = media.CONTACT_EMAIL
+REPO_URL = "https://github.com/Hudmebac/heliosrea"
+ZIP_URL = "https://github.com/Hudmebac/heliosrea/archive/refs/heads/main.zip"
 
 
 # ------------------------------------------------------------------ helpers --
@@ -48,6 +50,7 @@ NAV = (
     ("guides", "Field guides", "guides/"),
     ("method", "Method", "method/"),
     ("watch", "Field notes", "watch/"),
+    ("download", "Download", "download/"),
     ("proof", "Proof", "proof/"),
     ("newsletter", "Monthly notes", "newsletter/"),
     ("pricing", "Support", "pricing/"),
@@ -69,7 +72,7 @@ def _footer(root: str) -> str:
 <div><b>THE TEARDOWN ROOM</b><p>Evidence-led teardowns of devices, apps and workflows we own or have written permission to inspect. Every claim carries a finding ID, a locator, a confidence and a stated limit.</p></div>
 <div><h4>Read</h4><a href="{root}start/">Start here</a><a href="{root}evidence/">Evidence library</a><a href="{root}facts/">Fact files</a><a href="{root}proof/">Proof</a></div>
 <div><h4>Learn</h4><a href="{root}guides/">Field guides</a><a href="{root}method/">Method</a><a href="{root}glossary/">Glossary</a><a href="{root}crew/">Crew</a></div>
-<div><h4>Room</h4><a href="{root}watch/">Ten field notes</a><a href="{root}newsletter/">Monthly notes</a><a href="{root}pricing/">Support · £5</a><a href="mailto:{_e(CONTACT_EMAIL)}">Email the room</a></div>
+<div><h4>Room</h4><a href="{root}download/">Download the room</a><a href="{root}watch/">Ten field notes</a><a href="{root}newsletter/">Monthly notes</a><a href="{root}pricing/">Support · £5</a><a href="mailto:{_e(CONTACT_EMAIL)}">Email the room</a></div>
 </div><p class="footer-rule">No dossier, no publication. Fixtures, demos, example hosts and private network captures are refused. Secret-shaped values are redacted before publication. The £5 link is a public Stripe Payment Link; no secret key is stored in this site. The field-note list is opt-in and never sold.</p></footer>"""
 
 
@@ -409,6 +412,7 @@ def _search_index(pubs: list[dict], facts: list[dict]) -> list[dict]:
         {"title": "Crew", "url": "crew/", "type": "Trust", "description": "The six production lanes and the hand-offs between them."},
         {"title": "Monthly field notes", "url": "newsletter/", "type": "Room", "description": "Opt in to a short monthly note with one finding, one seam and one limit."},
         {"title": "Support", "url": "pricing/", "type": "Room", "description": "The optional £5 donation and the separate field-note opt-in."},
+        {"title": "Download", "url": "download/", "type": "Room", "description": "Download the Engine Room source and run it locally with Python 3.10+."},
     ]
     entries += [
         {"title": f"Field note {note['number']}: {note['title']}", "url": f"watch/{note['number']}/", "type": "Video", "description": str(note["dek"])}
@@ -1008,6 +1012,11 @@ def home_html(pubs: list[dict], facts: list[dict], lanes: list[dict]) -> str:
 <p>The room is built for an operator and a crew: evidence, verification, story, video, publish and sell.</p></div><a href="crew/">Meet the crew →</a></div>
 {_lane_cards(lanes)}</section>
 
+<section id="download"><div class="section-head"><div><span class="eyebrow">Download</span><h2>Run the room on your own machine</h2>
+<p>The Engine Room is local-first and free to run: Python 3.10+, no account, no key. Download the source, start the console on loopback, and keep every dossier on your own disk.</p></div><a href="download/">Download and setup →</a></div>
+<div class="card"><div class="hero-actions">{_link('Download ZIP', ZIP_URL, 'gold')}{_link('Open GitHub', REPO_URL)}</div>
+<p class="small">Windows: run <code>REA.bat</code>. Any OS: <code>python rea/server.py</code>. Then open <code>127.0.0.1:4711</code>. Authorised targets only.</p></div></section>
+
 <section><div class="section-head"><div><span class="eyebrow">Support</span><h2>One optional £5 donation. Nothing else to buy.</h2>
 <p>There is no paid pack and no subscription. If the evidence is useful, you can leave a one-time donation. It buys no deliverable.</p></div><a href="pricing/">Read the support page →</a></div>
 {_price_cards()}</section>
@@ -1128,6 +1137,59 @@ def guides_html() -> str:
 """
     return _page("Field guides", "Practical guides to scoped, evidence-led teardowns, publishing without hype and writing a monthly field note.",
                  "../", "guides", body)
+
+
+def download_html() -> str:
+    body = f"""
+<span class="eyebrow">Download</span><h1>Run the room on your own machine.</h1>
+<p class="dek">The Engine Room is a local-first Python console. Download the source, run it on your own computer, and point it only at systems you own or have written permission to inspect. No account, no API key and no cloud dependency.</p>
+{_chips([("requires", "Python 3.10+"), ("runs on", "Windows · macOS · Linux"), ("data", "stays local")])}
+<div class="hero-actions">{_link('Download ZIP', ZIP_URL, 'gold')}{_link('Open the GitHub repository', REPO_URL)}</div>
+
+<div class="download-grid">
+<div class="card"><h3>What you get</h3>
+<ul class="rule-list">
+<li>The Engine Room console and the fixed probe ladder.</li>
+<li>Local dossiers, Improve plans and the crew decision layer.</li>
+<li>The gated executor: apply, verify and reverse a local patch.</li>
+<li>The static site generator, the crew roster and the Mailroom.</li>
+</ul></div>
+<div class="card"><h3>What is not included</h3>
+<ul class="rule-list">
+<li>No dossiers, contacts or local configuration.</li>
+<li>No hosted service and no automatic updates.</li>
+<li>No licence has been declared yet, so default copyright applies.</li>
+<li>No guarantee that a probe finds a seam.</li>
+</ul></div>
+</div>
+
+<h2>Install in four steps</h2>
+<ol class="steps">
+<li><b>Get the code.</b> Download the ZIP and unpack it, or clone with Git:<pre class="shell"><code>git clone {REPO_URL}.git</code></pre></li>
+<li><b>Open the folder.</b><pre class="shell"><code>cd heliosrea</code></pre></li>
+<li><b>Start the room.</b> On Windows run <code>REA.bat</code>. On any OS run:<pre class="shell"><code>python rea/server.py</code></pre></li>
+<li><b>Open the console.</b> Visit <a href="http://127.0.0.1:4711/">http://127.0.0.1:4711/</a>. The server binds to loopback only.</li>
+</ol>
+
+<div class="note"><b>Before your first run:</b> you need Python 3.10 or newer on your PATH. Nothing is installed with pip, and no account or key is needed. The console writes dossiers to <code>rea/data/</code> on your machine.</div>
+
+<h2>What to do first</h2>
+<p>Read the <a href="../start/">short start route</a>, then run one investigation against a small folder you own. Open <b>Improve</b>, write one outcome, and let the crew choose a move. The plan is a draft; the patch is applied only when you confirm it.</p>
+
+<h2>Safety and limits</h2>
+<div class="cards-2">
+<div class="card"><h3>Authorised targets only</h3><p>Only inspect systems you own or have written permission to assess. The console refuses unauthorised investigations and blocks fixture or demo targets from publication.</p></div>
+<div class="card"><h3>Reversible by design</h3><p>Automatic execution is limited to software or web plans on a clean local git work tree. Verification failure reverses the patch, and every applied plan can be rolled back.</p></div>
+</div>
+
+<h2>Keep up with the room</h2>
+<p>The <a href="../watch/">ten field notes</a> are the shortest route into the evidence. The <a href="../newsletter/">monthly note</a> is opt-in and free.</p>
+
+<div class="note"><b>Repository:</b> <a href="{REPO_URL}" rel="noreferrer">{REPO_URL}</a><br><b>Download:</b> <a href="{ZIP_URL}" rel="noreferrer">main branch ZIP</a></div>
+"""
+    return _page("Download",
+                 "Download the Engine Room source, run it locally with Python 3.10+, and inspect only targets you own or have written permission to assess.",
+                 "../", "download", body)
 
 
 def method_html() -> str:
@@ -1560,6 +1622,7 @@ def write_site(root: Path, pubs: list[dict], facts: list[dict], lanes: list[dict
     _write(root / "facts" / "index.html", facts_html(facts))
     _write(root / "guides" / "index.html", guides_html())
     _write(root / "method" / "index.html", method_html())
+    _write(root / "download" / "index.html", download_html())
     _write(root / "crew" / "index.html", crew_html(lanes))
     _write(root / "proof" / "index.html", proof_html(pubs, facts))
     _write(root / "newsletter" / "index.html", newsletter_html(issues))

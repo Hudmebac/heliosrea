@@ -66,6 +66,12 @@
   "description": "The optional £5 donation and the separate field-note opt-in."
  },
  {
+  "title": "Download",
+  "url": "download/",
+  "type": "Room",
+  "description": "Download the Engine Room source and run it locally with Python 3.10+."
+ },
+ {
   "title": "Field note 01: One file, ten findings, seven seams",
   "url": "watch/01/",
   "type": "Video",
