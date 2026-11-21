@@ -25,6 +25,13 @@ table{width:100%;border-collapse:collapse;font-size:12px}th,td{text-align:left;v
 #alert{display:none;margin:12px 0;padding:10px 12px;border-radius:8px;font-size:12px}#alert.ok{display:block;border:1px solid rgba(129,240,173,.3);background:rgba(129,240,173,.07);color:#c9f7d9}#alert.err{display:block;border:1px solid rgba(255,145,160,.35);background:rgba(255,145,160,.07);color:#ffc9d0}
 .empty{border:1px dashed rgba(151,193,224,.28);border-radius:9px;padding:18px;color:var(--dim);font-size:12px}
 @media(max-width:800px){.stats{grid-template-columns:1fr 1fr}.form-grid,.form-grid.three{grid-template-columns:1fr}h1{font-size:30px}.wrap{padding:20px 14px 50px}}
+
+  .creator-footer{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,.9fr);gap:18px;border-top:1px solid rgba(151,193,224,.16);margin-top:30px;padding-top:18px;color:var(--faint)}
+  .creator-card b{display:block;font-size:18px;color:#eef8ff;margin:3px 0 4px;letter-spacing:.02em}
+  .creator-card p{max-width:720px;margin:0;font-size:11.5px;line-height:1.65;color:var(--dim)}
+  .creator-meta{display:grid;gap:4px;align-content:start;text-align:right;font:10.5px/1.6 var(--mono);color:var(--faint)}
+  .creator-meta a{font-size:10.5px}
+  @media(max-width:720px){.creator-footer{grid-template-columns:1fr}.creator-meta{text-align:left}}
 </style>
 </head>
 <body><div class="wrap">
@@ -83,6 +90,18 @@ table{width:100%;border-collapse:collapse;font-size:12px}th,td{text-align:left;v
   <p class="small">The store is a local JSON file outside the public site. The public form saves an opt-in request; the donation link is separate. This console has no email sender, so it cannot pretend a message was delivered. Export the CSV or copy an issue, then send from the configured contact address.</p>
   <p class="small">Contact address: <b id="owner-email">—</b></p>
 </section>
+<footer class="creator-footer" aria-label="Copyright and creator">
+  <div class="creator-card">
+    <span class="eyebrow">The creator</span>
+    <b>Creator: Helios</b>
+    <p>Access is only useful when it leads to understanding. My aspiration is to do the simple things, consistently and well: understand the system, make one reversible improvement, leave it better than I found it. Small, honest work repeated is how big changes become real — and how the world gets a little better.</p>
+  </div>
+  <div class="creator-meta">
+    <span>© <span data-current-year>2026</span> Helios. All rights reserved.</span>
+    <span>Built local-first · authorised targets only · every change reversible</span>
+    <a href="https://heliosrea.netlify.app/" target="_blank" rel="noreferrer">Official site ↗</a>
+  </div>
+</footer>
 </div>
 
 <script>
@@ -239,6 +258,9 @@ table{width:100%;border-collapse:collapse;font-size:12px}th,td{text-align:left;v
 
   const now = new Date();
   $("issue-month").value = now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, "0");
+  document.querySelectorAll("[data-current-year]").forEach((el) => {
+    el.textContent = String(new Date().getFullYear());
+  });
   load();
 })();
 </script>

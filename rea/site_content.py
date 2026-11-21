@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import html
 import json
+from datetime import date
 from pathlib import Path
 from urllib.parse import quote
 
@@ -23,6 +24,14 @@ BRAND = media.CHANNEL
 CONTACT_EMAIL = media.CONTACT_EMAIL
 REPO_URL = "https://github.com/Hudmebac/heliosrea"
 ZIP_URL = "https://github.com/Hudmebac/heliosrea/archive/refs/heads/main.zip"
+
+CREATOR = "Helios"
+CREATOR_BIO = (
+    "Access is only useful when it leads to understanding. My aspiration is to do the "
+    "simple things, consistently and well: understand the system, make one reversible "
+    "improvement, leave it better than I found it. Small, honest work repeated is how "
+    "big changes become real — and how the world gets a little better."
+)
 
 
 # ------------------------------------------------------------------ helpers --
@@ -68,12 +77,14 @@ def _header(root: str, active: str) -> str:
 
 
 def _footer(root: str) -> str:
+    year = date.today().year
     return f"""<footer class="foot"><div class="footer-grid">
-<div><b>THE TEARDOWN ROOM</b><p>Evidence-led teardowns of devices, apps and workflows we own or have written permission to inspect. Every claim carries a finding ID, a locator, a confidence and a stated limit.</p></div>
+<div><b>THE TEARDOWN ROOM</b><p>Evidence-led teardowns of devices, apps and workflows we own or have written permission to inspect. Every claim carries a finding ID, a locator, a confidence and a stated limit.</p>
+<p class="creator-note"><b>Creator: {CREATOR}</b><br>{CREATOR_BIO}</p></div>
 <div><h4>Read</h4><a href="{root}start/">Start here</a><a href="{root}evidence/">Evidence library</a><a href="{root}facts/">Fact files</a><a href="{root}proof/">Proof</a></div>
 <div><h4>Learn</h4><a href="{root}guides/">Field guides</a><a href="{root}method/">Method</a><a href="{root}glossary/">Glossary</a><a href="{root}crew/">Crew</a></div>
 <div><h4>Room</h4><a href="{root}download/">Download the room</a><a href="{root}watch/">Ten field notes</a><a href="{root}newsletter/">Monthly notes</a><a href="{root}pricing/">Support · £5</a><a href="mailto:{_e(CONTACT_EMAIL)}">Email the room</a></div>
-</div><p class="footer-rule">No dossier, no publication. Fixtures, demos, example hosts and private network captures are refused. Secret-shaped values are redacted before publication. The £5 link is a public Stripe Payment Link; no secret key is stored in this site. The field-note list is opt-in and never sold.</p><p class="footer-rule">Official site: <a href="https://heliosrea.netlify.app/">heliosrea.netlify.app</a>. The only official support link is the Stripe £5 link in the header. Forks and copies are not operated by the room and cannot change this site, its payment link or its data.</p></footer>"""
+</div><p class="footer-credit"><span>© <span data-current-year>{year}</span> {CREATOR}. All rights reserved.</span><span>Built local-first · authorised targets only · every change reversible</span></p><p class="footer-rule">No dossier, no publication. Fixtures, demos, example hosts and private network captures are refused. Secret-shaped values are redacted before publication. The £5 link is a public Stripe Payment Link; no secret key is stored in this site. The field-note list is opt-in and never sold.</p><p class="footer-rule">Official site: <a href="https://heliosrea.netlify.app/">heliosrea.netlify.app</a>. The only official support link is the Stripe £5 link in the header. Forks and copies are not operated by the room and cannot change this site, its payment link or its data.</p></footer>"""
 
 
 def _search_panel(root: str) -> str:
@@ -1037,6 +1048,8 @@ def home_html(pubs: list[dict], facts: list[dict], lanes: list[dict]) -> str:
 <details><summary>Are the field notes finished?</summary><p>There are ten finished short narrated captioned field notes generated from the real dossier. They use three local Windows OneCore voices in ten presenter treatments. There is no recorded teardown video and no client footage. The notes are a door into the evidence, not a replacement for it.</p></details>
 </div></section>
 
+<section class="split"><div class="card"><span class="eyebrow">Creator's note</span><h2>Do the simple things well. Repeat.</h2><p>{CREATOR_BIO}</p><p class="small"><b>Creator: {CREATOR}</b></p></div><div class="card"><span class="eyebrow">The aim</span><h2>Understand. Improve. Leave it better.</h2><p>Access is only the beginning. The useful work is understanding what is there, naming the seam where change is possible, making one reversible improvement and recording how to reset it.</p></div></section>
+
 <section><span class="eyebrow">The rules</span><h2>What the room will not do</h2>
 <div class="card"><ul class="rule-list">{''.join(f'<li>{_e(rule)}</li>' for rule in media.RULES)}</ul></div></section>
 """
@@ -1456,6 +1469,9 @@ def guide_html(guide: dict, previous: dict | None = None, following: dict | None
 # ------------------------------------------------------------------- writer --
 
 SITE_JS = r"""(() => {
+  document.querySelectorAll("[data-current-year]").forEach((el) => {
+    el.textContent = String(new Date().getFullYear());
+  });
   const forms = document.querySelectorAll("form.subscribe-form");
   forms.forEach((form) => {
     form.addEventListener("submit", async (event) => {

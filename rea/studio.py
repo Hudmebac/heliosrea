@@ -690,6 +690,7 @@ color:#9fc7dc}.small{font-size:12px;color:var(--faint)}
 .footer-grid b{display:block;letter-spacing:.16em;font-size:11px;margin-bottom:6px}
 .footer-grid h4{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:0 0 6px}.footer-grid a{display:block;font-size:11px;margin:3px 0}.footer-grid p{font-size:11px;color:var(--faint);max-width:360px}
 .footer-rule{border-top:1px solid rgba(151,193,224,.12);padding-top:12px;margin:0}
+.creator-note{border-top:1px solid rgba(151,193,224,.1);margin:10px 0 0;padding-top:8px;color:#b8cfe0;font-size:11px;line-height:1.65}.creator-note b{color:var(--gold);letter-spacing:.04em}.footer-credit{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1px solid rgba(151,193,224,.12);margin:0 0 10px;padding-top:12px;color:#c3d6e5;font-family:var(--mono);font-size:10px;letter-spacing:.02em}.footer-credit span:last-child{color:var(--faint)}
 .skip{position:absolute;left:-9999px;top:10px;z-index:100;background:var(--gold);color:#111;padding:8px 12px;border-radius:6px;font:600 12px var(--sans)}.skip:focus{left:14px}
 .nav-start{color:var(--gold)}.nav-search{border:0;background:none;color:inherit;font:inherit;padding:0;cursor:pointer}.nav-search:hover{color:var(--cyan)}.nav kbd{font:9px var(--mono);border:1px solid var(--line);border-radius:3px;padding:0 4px;color:var(--faint)}
 .search-panel{position:fixed;inset:0;z-index:80;background:rgba(3,7,12,.84);backdrop-filter:blur(6px);padding:8vh 16px;overflow:auto}.search-panel[hidden]{display:none}
@@ -1140,9 +1141,7 @@ monthly field notes. There is no paid pack and no subscription. The donation buy
 <p class="small">No result or income is guaranteed. Read the evidence and the limits before
 deciding whether the work is useful to you.</p>
 </main>
-<footer class="foot">Published from the REA Engine Room. Evidence IDs, locators, confidence and the
-dossier hash are retained. Secret-shaped values are redacted before publication. This page is
-generated from a local dossier; it is not an exploit write-up or an offer of unauthorised access.</footer>
+{site_content._footer("../../")}
 </div></body></html>"""
 
 
@@ -1207,10 +1206,7 @@ deliverable. The monthly field notes are a separate opt-in.</p>
 <a class="btn gold" href="{_escape(stripe['donation_link'])}" rel="noreferrer">Leave a £5 donation</a>
 <a class="btn" href="newsletter/">Request monthly field notes</a>
 </main>
-<footer class="foot">The Teardown Room publishes only authorised, non-destructive evidence work.
-No page here claims a result that is not in its dossier. Secret-shaped values are redacted before
-publication. The donation link is a public Payment Link; no secret key is stored in this site. The
-field-note list is opt-in and is never published.</footer>
+{site_content._footer("")}
 </div></body></html>"""
 
 

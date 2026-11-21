@@ -1,4 +1,7 @@
 (() => {
+  document.querySelectorAll("[data-current-year]").forEach((el) => {
+    el.textContent = String(new Date().getFullYear());
+  });
   const forms = document.querySelectorAll("form.subscribe-form");
   forms.forEach((form) => {
     form.addEventListener("submit", async (event) => {

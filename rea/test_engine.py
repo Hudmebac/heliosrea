@@ -973,6 +973,9 @@ class REATests(unittest.TestCase):
             self.assertIn('id="crew-personas"', page)
             self.assertIn('id="crew-search"', page)
             self.assertIn('id="crew-lens-hint"', page)
+            self.assertIn('class="creator-footer"', page)
+            self.assertIn("Creator: Helios", page)
+            self.assertIn("data-current-year", page)
             self.assertIn("Smallest reversible change", page)
             self.assertIn("One dossier. One evidence file.", page)
             self.assertIn("data-view=\"studio\"", page)
@@ -1072,6 +1075,9 @@ class REATests(unittest.TestCase):
             self.assertEqual(mailroom_data["contacts"][0]["email"], "reader@example.com")
             with urllib.request.urlopen(base + "/mailroom/", timeout=5) as response:
                 self.assertEqual(response.status, 200)
+                mailroom_page = response.read().decode("utf-8")
+            self.assertIn("Creator: Helios", mailroom_page)
+            self.assertIn("data-current-year", mailroom_page)
 
             with urllib.request.urlopen(base + "/api/studio", timeout=5) as response:
                 engine_room = json.loads(response.read().decode("utf-8"))
@@ -1221,6 +1227,10 @@ class REATests(unittest.TestCase):
             self.assertIn("REA.bat", download_page)
             self.assertIn("local preview of this public website", download_page)
             self.assertIn("Official site", published_index)
+            self.assertIn("Creator: Helios", published_index)
+            self.assertIn("All rights reserved", published_index)
+            self.assertIn("data-current-year", published_index)
+            self.assertIn("Access is only useful", published_index)
 
             brief_request = urllib.request.Request(
                 base + "/api/ideas/generate",
