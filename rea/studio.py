@@ -291,6 +291,7 @@ def _fact_payloads(pubs: list[dict], extra_inv: dict | None = None) -> list[dict
             facts.append({
                 "slug": f"{pub_slug}-{eid.lower()}",
                 "code": eid,
+                "publication": pub_slug,
                 "group": "Change surfaces",
                 "title": f"{locator} — recorded change surface",
                 "eyebrow": f"Seam · {edit.get('category') or 'Change surface'}",

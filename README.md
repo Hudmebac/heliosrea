@@ -21,7 +21,7 @@ Point it at something you own, map the seam where behaviour can change, then mak
 
 <img src="https://img.shields.io/badge/python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.10+" />
 <img src="https://img.shields.io/badge/dependencies-stdlib_only-22c55e?style=for-the-badge" alt="Standard library only" />
-<img src="https://img.shields.io/badge/tests-34_passing-brightgreen?style=for-the-badge" alt="35 tests passing" />
+<img src="https://img.shields.io/badge/tests-35_passing-brightgreen?style=for-the-badge" alt="35 tests passing" />
 <img src="https://img.shields.io/badge/network-loopback_only-0ea5e9?style=for-the-badge" alt="Loopback only" />
 <img src="https://img.shields.io/badge/targets-authorised_only-f6ca70?style=for-the-badge" alt="Authorised targets only" />
 <img src="https://img.shields.io/badge/account-none-6b7280?style=for-the-badge" alt="No account" />
