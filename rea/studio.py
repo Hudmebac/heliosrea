@@ -46,6 +46,7 @@ import site_content
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE_DIR = ROOT / "site"
+SITE_URL = "https://heliosrea.netlify.app"
 MIN_FINDINGS = 3
 MIN_EDITS = 1
 
@@ -245,6 +246,7 @@ def _fact_payloads(pubs: list[dict], extra_inv: dict | None = None) -> list[dict
             facts.append({
                 "slug": f"{pub_slug}-{fid.lower()}",
                 "code": fid,
+                "publication": pub_slug,
                 "group": "Target facts",
                 "title": engine.redact(finding.get("title") or fid),
                 "eyebrow": f"Finding · {finding.get('family') or 'Evidence'}",
@@ -327,6 +329,7 @@ def _fact_payloads(pubs: list[dict], extra_inv: dict | None = None) -> list[dict
         facts.append({
             "slug": f"{pub_slug}-scope",
             "code": "SCOPE",
+            "publication": pub_slug,
             "group": "Run facts",
             "title": "Scope, authorisation and what was actually run",
             "eyebrow": "Run fact · Dossier frame",
@@ -369,6 +372,7 @@ def _fact_payloads(pubs: list[dict], extra_inv: dict | None = None) -> list[dict
         facts.append({
             "slug": f"{pub_slug}-probe-ledger",
             "code": "PROBES",
+            "publication": pub_slug,
             "group": "Run facts",
             "title": "Probe ledger — signal, empty and error",
             "eyebrow": "Run fact · Probe ledger",
@@ -709,12 +713,52 @@ pre.shell code{font:inherit;color:inherit;background:none;padding:0}
 """.strip()
 
 
+def _page_url(root: Path, path: Path) -> str:
+    rel = path.relative_to(root).as_posix()
+    if rel.endswith("index.html"):
+        rel = rel[: -len("index.html")]
+    return SITE_URL + "/" + rel
+
+
+def _stamp_canonicals(root: Path) -> None:
+    nl = chr(10)
+    for path in sorted(root.rglob("*.html")):
+        if path.name == "404.html":
+            continue
+        text = path.read_text("utf-8")
+        if 'rel="canonical"' in text:
+            continue
+        tag = f'<link rel="canonical" href="{html.escape(_page_url(root, path), quote=True)}">'
+        if '<meta name="description"' in text:
+            text = text.replace('<meta name="description"', tag + nl + '<meta name="description"', 1)
+        else:
+            text = text.replace("</head>", tag + "</head>", 1)
+        _write(path, text)
+
+
+def _write_site_indexes(root: Path) -> None:
+    nl = chr(10)
+    pages = [path for path in sorted(root.rglob("*.html")) if path.name != "404.html"]
+    urls = "".join(
+        f"<url><loc>{html.escape(_page_url(root, path))}</loc></url>" for path in pages
+    )
+    _write(root / "sitemap.xml",
+           '<?xml version="1.0" encoding="UTF-8"?>' + nl +
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' +
+           urls + "</urlset>" + nl)
+    _write(root / "robots.txt",
+           "User-agent: *" + nl + "Allow: /" + nl + nl +
+           "Sitemap: " + SITE_URL + "/sitemap.xml" + nl)
+
+
 def ensure_site(site_root: str | Path | None = None, inv: dict | None = None) -> Path:
     root = Path(site_root) if site_root else SITE_DIR
     pubs = _published_manifests(root)
     facts = _fact_payloads(pubs, inv)
     _write(root / "assets" / "site.css", SITE_CSS)
     site_content.write_site(root, pubs, facts, _crew_lanes(), mailroom.public_issues())
+    _stamp_canonicals(root)
+    _write_site_indexes(root)
     return root
 
 

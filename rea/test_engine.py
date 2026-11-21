@@ -1444,3 +1444,39 @@ print(value)
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+
+
+class PublicSiteHygieneTest(unittest.TestCase):
+    def test_canonicals_indexes_and_custom_404(self):
+        import re
+        import tempfile
+        from pathlib import Path
+
+        import studio
+
+        with tempfile.TemporaryDirectory() as tmp:
+            studio.ensure_site(tmp)
+            pages = sorted(Path(tmp).rglob("*.html"))
+            self.assertGreater(len(pages), 20)
+            not_found = (Path(tmp) / "404.html").read_text("utf-8")
+            self.assertIn("not in the room", not_found)
+            self.assertIn('name="robots" content="noindex"', not_found)
+            titles, descriptions, canonicals = [], [], 0
+            for page in pages:
+                text = page.read_text("utf-8")
+                if page.name == "404.html":
+                    continue
+                self.assertIn('rel="canonical"', text, page.name)
+                self.assertIn('href="https://heliosrea.netlify.app/', text, page.name)
+                canonicals += 1
+                titles.append(re.search(r"<title>(.*?)</title>", text, re.S).group(1))
+                descriptions.append(
+                    re.search(r'<meta name="description" content="(.*?)"', text, re.S).group(1)
+                )
+            self.assertEqual(len(titles), len(set(titles)))
+            self.assertEqual(len(descriptions), len(set(descriptions)))
+            sitemap = (Path(tmp) / "sitemap.xml").read_text("utf-8")
+            self.assertEqual(sitemap.count("<url>"), canonicals)
+            self.assertNotIn("404.html", sitemap)
+            robots = (Path(tmp) / "robots.txt").read_text("utf-8")
+            self.assertIn("Sitemap: https://heliosrea.netlify.app/sitemap.xml", robots)

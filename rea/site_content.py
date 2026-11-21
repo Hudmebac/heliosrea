@@ -87,7 +87,7 @@ def _search_panel(root: str) -> str:
 </div></div>"""
 
 
-def _page(title: str, description: str, root: str, active: str, body: str) -> str:
+def _page(title: str, description: str, root: str, active: str, body: str, head_extra: str = "") -> str:
     return f"""<!doctype html>
 <html lang="en-GB" data-root="{root}"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -98,7 +98,7 @@ def _page(title: str, description: str, root: str, active: str, body: str) -> st
 <meta property="og:description" content="{_e(description)}">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="{root}assets/site.css">
-<script src="{root}assets/site.js" defer></script></head>
+<script src="{root}assets/site.js" defer></script>{head_extra}</head>
 <body><a class="skip" href="#main">Skip to content</a><div class="wrap">
 {_header(root, active)}
 <main id="main" tabindex="-1">{body}</main>
@@ -1414,8 +1414,14 @@ def fact_html(fact: dict, pubs: list[dict]) -> str:
 {note}
 <div class="card"><h3>Keep checking</h3>{link_html}</div>
 """
-    return _page(str(fact.get("title") or "Fact file"), str(fact.get("summary") or "A fact file from the evidence room."),
-                 "../", "facts", body)
+    meta_title = str(fact.get("title") or "Fact file")
+    publication = str(fact.get("publication") or "")
+    if publication:
+        meta_title = f"{meta_title} — {publication}"
+    meta_description = str(fact.get("summary") or "A fact file from the evidence room.")
+    if publication:
+        meta_description = f"{meta_description} Fact {fact.get('code') or ''} in {publication}."
+    return _page(meta_title, meta_description, "../", "facts", body)
 
 
 def guide_html(guide: dict, previous: dict | None = None, following: dict | None = None) -> str:
@@ -1617,6 +1623,22 @@ SITE_JS = r"""(() => {
 """
 
 
+def not_found_html() -> str:
+    body = """
+<div class="breadcrumb"><a href="/index.html">Home</a></div>
+<span class="eyebrow">404 · No such page</span><h1>That page is not in the room</h1>
+<p class="dek">The URL may have moved, or the page was never published. Nothing was changed and nothing was lost.</p>
+<div class="card"><h3>Pick a route back</h3>
+<p>The room only publishes what passed the gate. Start with the front page, the evidence library or the download.</p>
+<a class="btn gold" href="/index.html">Front page</a>
+<a class="btn" href="/evidence/">Evidence library</a>
+<a class="btn" href="/download/">Download</a>
+<a class="btn" href="/method/">Method</a></div>
+"""
+    return _page("Page not found", "That page is not in the room. Return to the front page, the evidence library or the download.",
+                 "/", "", body, '<meta name="robots" content="noindex">')
+
+
 def write_site(root: Path, pubs: list[dict], facts: list[dict], lanes: list[dict],
                issues: list[dict] | None = None) -> None:
     issues = issues or []
@@ -1631,6 +1653,7 @@ def write_site(root: Path, pubs: list[dict], facts: list[dict], lanes: list[dict
     _write(root / "newsletter" / "index.html", newsletter_html(issues))
     _write(root / "pricing" / "index.html", pricing_html())
     _write(root / "start" / "index.html", start_html(pubs, facts))
+    _write(root / "404.html", not_found_html())
     _write(root / "watch" / "index.html", watch_html(pubs))
     for note in field_notes.FIELD_NOTES:
         _write(root / "watch" / note["number"] / "index.html", watch_note_html(note, pubs))
