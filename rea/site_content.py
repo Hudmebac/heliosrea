@@ -73,7 +73,7 @@ def _footer(root: str) -> str:
 <div><h4>Read</h4><a href="{root}start/">Start here</a><a href="{root}evidence/">Evidence library</a><a href="{root}facts/">Fact files</a><a href="{root}proof/">Proof</a></div>
 <div><h4>Learn</h4><a href="{root}guides/">Field guides</a><a href="{root}method/">Method</a><a href="{root}glossary/">Glossary</a><a href="{root}crew/">Crew</a></div>
 <div><h4>Room</h4><a href="{root}download/">Download the room</a><a href="{root}watch/">Ten field notes</a><a href="{root}newsletter/">Monthly notes</a><a href="{root}pricing/">Support · £5</a><a href="mailto:{_e(CONTACT_EMAIL)}">Email the room</a></div>
-</div><p class="footer-rule">No dossier, no publication. Fixtures, demos, example hosts and private network captures are refused. Secret-shaped values are redacted before publication. The £5 link is a public Stripe Payment Link; no secret key is stored in this site. The field-note list is opt-in and never sold.</p></footer>"""
+</div><p class="footer-rule">No dossier, no publication. Fixtures, demos, example hosts and private network captures are refused. Secret-shaped values are redacted before publication. The £5 link is a public Stripe Payment Link; no secret key is stored in this site. The field-note list is opt-in and never sold.</p><p class="footer-rule">Official site: <a href="https://heliosrea.netlify.app/">heliosrea.netlify.app</a>. The only official support link is the Stripe £5 link in the header. Forks and copies are not operated by the room and cannot change this site, its payment link or its data.</p></footer>"""
 
 
 def _search_panel(root: str) -> str:
@@ -115,7 +115,8 @@ def _chips(items: list[tuple[str, object]]) -> str:
 
 def _link(label: str, href: str, style: str = "") -> str:
     cls = f' class="btn {style}"'.rstrip() if style else ' class="btn"'
-    return f'<a{cls} href="{_e(href)}">{_e(label)}</a>'
+    rel = ' rel="noreferrer"' if href.startswith(("http://", "https://")) else ""
+    return f'<a{cls} href="{_e(href)}"{rel}>{_e(label)}</a>'
 
 
 def _subscribe_form(source: str, donation_context: bool = False, compact: bool = False) -> str:
@@ -1156,12 +1157,14 @@ def download_html() -> str:
 </ul></div>
 <div class="card"><h3>What is not included</h3>
 <ul class="rule-list">
-<li>No dossiers, contacts or local configuration.</li>
+<li>No owner data: no dossiers, contacts, payment settings or notes.</li>
 <li>No hosted service and no automatic updates.</li>
 <li>No licence has been declared yet, so default copyright applies.</li>
 <li>No guarantee that a probe finds a seam.</li>
 </ul></div>
 </div>
+
+<div class="note"><b>What the download contains:</b> the Engine Room, the full source, a local preview of this public website at <code>/published/</code>, and an empty Mailroom at <code>/mailroom/</code>. It contains no dossiers, contact list, payment configuration or owner notes, and it cannot change this site or its data.</div>
 
 <h2>Install in four steps</h2>
 <ol class="steps">

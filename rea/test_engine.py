@@ -1210,6 +1210,8 @@ class REATests(unittest.TestCase):
             self.assertIn("github.com/Hudmebac/heliosrea", download_page)
             self.assertIn("python rea/server.py", download_page)
             self.assertIn("REA.bat", download_page)
+            self.assertIn("local preview of this public website", download_page)
+            self.assertIn("Official site", published_index)
 
             brief_request = urllib.request.Request(
                 base + "/api/ideas/generate",
