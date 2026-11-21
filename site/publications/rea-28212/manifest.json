@@ -1,0 +1,19 @@
+{
+ "slug": "rea-28212",
+ "title": "Inside the REA engine room: evidence, gate and seam",
+ "target": "rea",
+ "dossier_id": "REA-20261121-60b03488-28212",
+ "kind": "folder",
+ "kind_label": "Local source tree",
+ "verdict": "7 change surface(s) mapped across 3 access mode(s): Source, Configuration, Protocol.",
+ "findings": 10,
+ "edits": 7,
+ "probes": 13,
+ "confidence": 0.43,
+ "digest": "dc00e1f9962716233ee0d901e1ca7cfc42d3156210993164c8220f38d0dfc934",
+ "published_at": "2026-11-21T08:10:10+00:00",
+ "page_url": "/published/publications/rea-28212/",
+ "evidence_url": "/published/publications/rea-28212/evidence.md",
+ "video_url": "/published/publications/rea-28212/video-script.md",
+ "card_url": "/published/publications/rea-28212/card.svg"
+}

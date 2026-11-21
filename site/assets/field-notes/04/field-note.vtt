@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.846
+A seam is a place, not a change. It is somewhere behaviour could change.
+
+00:00:06.846 --> 00:00:13.776
+The first seam is the source. In a tree we own, a direct edit is possible.
+
+00:00:13.776 --> 00:00:20.554
+Take a baseline first. Record the clean state before touching anything.
+
+00:00:20.554 --> 00:00:27.396
+Change one module. The smallest change gives the clearest comparison.
+
+00:00:27.396 --> 00:00:34.384
+Then compare the result. The diff is the evidence, not the intention.
+
+00:00:34.384 --> 00:00:43.685
+The seam carries ninety percent confidence and a low risk label. That is a recorded judgement, not a guarantee.
+
+00:00:43.685 --> 00:00:51.337
+A seam is not a repair. It does not claim the change was made, or that the result is safe.
+
+00:00:51.337 --> 00:00:58.928
+And the limit stays. No runtime claim beyond the probe, and no client work.

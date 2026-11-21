@@ -1,0 +1,302 @@
+[
+ {
+  "title": "Start here",
+  "url": "start/",
+  "type": "Route",
+  "description": "Three ways into the room for the curious, the beginner and the expert."
+ },
+ {
+  "title": "Field notes: ten evidence briefs",
+  "url": "watch/",
+  "type": "Series",
+  "description": "Ten narrated captioned field notes with ten presenter treatments, full transcripts and downloads."
+ },
+ {
+  "title": "Evidence library",
+  "url": "evidence/",
+  "type": "Library",
+  "description": "Every published evidence file, with counts, seams and limits."
+ },
+ {
+  "title": "Fact files",
+  "url": "facts/",
+  "type": "Evidence",
+  "description": "One claim per page, with the locator, confidence and limit."
+ },
+ {
+  "title": "Field guides",
+  "url": "guides/",
+  "type": "Learn",
+  "description": "Practical guides to scope, evidence, redaction, verification, story and publishing."
+ },
+ {
+  "title": "Method",
+  "url": "method/",
+  "type": "Learn",
+  "description": "The five stages, the publication gate, probe statuses and the refusals."
+ },
+ {
+  "title": "Glossary",
+  "url": "glossary/",
+  "type": "Learn",
+  "description": "Plain-language definitions of the room's evidence vocabulary."
+ },
+ {
+  "title": "Proof",
+  "url": "proof/",
+  "type": "Trust",
+  "description": "What is proven, what is not, and the testimonial policy."
+ },
+ {
+  "title": "Crew",
+  "url": "crew/",
+  "type": "Trust",
+  "description": "The six production lanes and the hand-offs between them."
+ },
+ {
+  "title": "Monthly field notes",
+  "url": "newsletter/",
+  "type": "Room",
+  "description": "Opt in to a short monthly note with one finding, one seam and one limit."
+ },
+ {
+  "title": "Support",
+  "url": "pricing/",
+  "type": "Room",
+  "description": "The optional £5 donation and the separate field-note opt-in."
+ },
+ {
+  "title": "Field note 01: One file, ten findings, seven seams",
+  "url": "watch/01/",
+  "type": "Video",
+  "description": "The opening brief. A small owned source tree, a recorded finding, a source seam and the limit. Start here if you want the shape of the room before the detail."
+ },
+ {
+  "title": "Field note 02: The gate: no dossier, no publication",
+  "url": "watch/02/",
+  "type": "Video",
+  "description": "A finished run is not automatically a story. This note walks the publication gate: the records, the seam, the real target and the human sign-off."
+ },
+ {
+  "title": "Field note 03: The shape of the file",
+  "url": "watch/03/",
+  "type": "Video",
+  "description": "Twelve files, four languages and no binaries. A surface map can be useful without becoming a vulnerability claim. This note shows what the first finding actually records."
+ },
+ {
+  "title": "Field note 04: A seam is a place, not a change",
+  "url": "watch/04/",
+  "type": "Video",
+  "description": "The source is the first change surface. The safe path is baseline, edit one module, compare. This note explains what E-01 records and what it still does not prove."
+ },
+ {
+  "title": "Field note 05: The empty probe is evidence",
+  "url": "watch/05/",
+  "type": "Video",
+  "description": "Signal, empty, error, skipped, retry. The status is part of the finding. This note explains why a clean ledger includes the rows that found nothing."
+ },
+ {
+  "title": "Field note 06: Redact the value. Keep the finding.",
+  "url": "watch/06/",
+  "type": "Video",
+  "description": "A claim can be public without the secret that proved it. This note covers replacement at the source, the limits of a blur, and the edges that leak."
+ },
+ {
+  "title": "Field note 07: Confidence is not a probability",
+  "url": "watch/07/",
+  "type": "Video",
+  "description": "A confidence score is a recorded judgement, not a truth score. This note separates a direct observation from an inference and shows why the findings are never averaged."
+ },
+ {
+  "title": "Field note 08: The receipt is not the proof",
+  "url": "watch/08/",
+  "type": "Video",
+  "description": "The page carries a SHA-256 hash of the dossier. It ties the story to a record. It does not prove that every conclusion is correct. This note keeps the distinction clear."
+ },
+ {
+  "title": "Field note 09: A story is a selection",
+  "url": "watch/09/",
+  "type": "Video",
+  "description": "The public story is not a diary of every probe. It is an argued path through the strongest evidence. This note shows the five-part spine and what stays in the appendix."
+ },
+ {
+  "title": "Field note 10: What the room refuses",
+  "url": "watch/10/",
+  "type": "Video",
+  "description": "No exploits. No borrowed targets. No invented testimonials. No paid pack. The refusals are not a disclaimer at the bottom; they decide what can be published."
+ },
+ {
+  "title": "solar4you [REBUILT] — evidence teardown",
+  "url": "publications/solar4you-rebuilt-83835/",
+  "type": "Evidence file",
+  "description": "2 change surface(s) mapped across 2 access mode(s): Source, Protocol."
+ },
+ {
+  "title": "Inside the REA engine room: evidence, gate and seam",
+  "url": "publications/rea-28212/",
+  "type": "Evidence file",
+  "description": "7 change surface(s) mapped across 3 access mode(s): Source, Configuration, Protocol."
+ },
+ {
+  "title": "4 files · 22.9 KB",
+  "url": "facts/solar4you-rebuilt-83835-f-001.html",
+  "type": "Target facts",
+  "description": "Languages by extension: .js, .html, .md, .css. Top folders: flat tree. Binaries/containers: 0."
+ },
+ {
+  "title": "Remote dependency · www.w3.org",
+  "url": "facts/solar4you-rebuilt-83835-f-005.html",
+  "type": "Target facts",
+  "description": "http://www.w3.org/2000/svg"
+ },
+ {
+  "title": "1 request surface(s)",
+  "url": "facts/solar4you-rebuilt-83835-f-004.html",
+  "type": "Target facts",
+  "description": "Absolute hosts: http://www.w3.org/2000/svg. Client calls: none"
+ },
+ {
+  "title": "Entry-point candidates",
+  "url": "facts/solar4you-rebuilt-83835-f-002.html",
+  "type": "Target facts",
+  "description": "index.html"
+ },
+ {
+  "title": "README.md · 25 lines",
+  "url": "facts/solar4you-rebuilt-83835-f-006.html",
+  "type": "Target facts",
+  "description": "Headings: Solar4You\r, Run\r, Features\r, Data and boundaries\r, Verify\r. Commands: none. Claims: none"
+ },
+ {
+  "title": "solar4you [REBUILT] — recorded change surface",
+  "url": "facts/solar4you-rebuilt-83835-e-01.html",
+  "type": "Change surfaces",
+  "description": "Edit the source tree directly; take a baseline test first, then patch the smallest module."
+ },
+ {
+  "title": "http://www.w3.org/2000/svg — recorded change surface",
+  "url": "facts/solar4you-rebuilt-83835-e-02.html",
+  "type": "Change surfaces",
+  "description": "Reimplement or intercept the client protocol at the request boundary; keep it read-only until authorised."
+ },
+ {
+  "title": "Scope, authorisation and what was actually run",
+  "url": "facts/solar4you-rebuilt-83835-scope.html",
+  "type": "Run facts",
+  "description": "The dossier records the target and scope."
+ },
+ {
+  "title": "Probe ledger — signal, empty and error",
+  "url": "facts/solar4you-rebuilt-83835-probe-ledger.html",
+  "type": "Run facts",
+  "description": "13 probes recorded: 4 signal, 9 empty, 0 error. The negative results are part of the file."
+ },
+ {
+  "title": "12 files · 688.5 KB",
+  "url": "facts/rea-28212-f-001.html",
+  "type": "Target facts",
+  "description": "Languages by extension: .py, .md, .png, .html. Top folders: data (1), viewer (1). Binaries/containers: 0."
+ },
+ {
+  "title": "Entry-point candidates",
+  "url": "facts/rea-28212-f-002.html",
+  "type": "Target facts",
+  "description": "server.py, index.html"
+ },
+ {
+  "title": "1 environment switches",
+  "url": "facts/rea-28212-f-005.html",
+  "type": "Target facts",
+  "description": "PORT"
+ },
+ {
+  "title": "README.md · 171 lines",
+  "url": "facts/rea-28212-f-008.html",
+  "type": "Target facts",
+  "description": "Headings: REA — Engine Room, How an investigation works, Probes, Captured traffic, WiFi, LAN devices and internet exposure, Guardrails, Engine Room and Studio, Publication gate. Commands: python rea/server.py    # any OS; python rea/engine.py <target> --offline --json --depth deep. Claims: is mocked here; a run still requires the operator's authorisation attestation."
+ },
+ {
+  "title": "rea — recorded change surface",
+  "url": "facts/rea-28212-e-01.html",
+  "type": "Change surfaces",
+  "description": "Edit the source tree directly; take a baseline test first, then patch the smallest module."
+ },
+ {
+  "title": "PORT — recorded change surface",
+  "url": "facts/rea-28212-e-03.html",
+  "type": "Change surfaces",
+  "description": "Flip a supported switch before editing code; it is the cheapest reversible change."
+ },
+ {
+  "title": "engine.py:506 — recorded change surface",
+  "url": "facts/rea-28212-e-04.html",
+  "type": "Change surfaces",
+  "description": "Inspect the marked change site (TODO: |FIXME|HACK|XXX)\\b[:\\s]*(.{0,90})\"))."
+ },
+ {
+  "title": "Scope, authorisation and what was actually run",
+  "url": "facts/rea-28212-scope.html",
+  "type": "Run facts",
+  "description": "Owned local source tree of the REA engine room; fixture data archived"
+ },
+ {
+  "title": "Probe ledger — signal, empty and error",
+  "url": "facts/rea-28212-probe-ledger.html",
+  "type": "Run facts",
+  "description": "13 probes recorded: 4 signal, 6 empty, 1 error. The negative results are part of the file."
+ },
+ {
+  "title": "Scope and authorise a teardown",
+  "url": "guides/scope-and-authorise.html",
+  "type": "Field guide",
+  "description": "The boundary comes before the tool. A one-page scope, a written permission and a stop condition are what make the rest of the work publishable."
+ },
+ {
+  "title": "Run the evidence ladder",
+  "url": "guides/run-the-evidence-ladder.html",
+  "type": "Field guide",
+  "description": "A repeatable sequence of probes, with statuses that tell you what is known, what is empty and what failed. Depth is earned, not assumed."
+ },
+ {
+  "title": "Redact secrets and private data",
+  "url": "guides/redact-before-you-publish.html",
+  "type": "Field guide",
+  "description": "Publication is a second pass. Replace sensitive values at the source, keep the finding, and never rely on a blur that can be reversed."
+ },
+ {
+  "title": "Verify a dossier before it becomes public",
+  "url": "guides/verify-a-dossier.html",
+  "type": "Field guide",
+  "description": "The gate is a reading task. Check the claim, the locator, the confidence and the limit before the studio writes a single public word."
+ },
+ {
+  "title": "Turn a dossier into a story",
+  "url": "guides/turn-evidence-into-a-story.html",
+  "type": "Field guide",
+  "description": "A story is a selection, not a dump. Lead with scope, finding, seam, proof and limit, and let the appendix carry the rest."
+ },
+ {
+  "title": "Shoot the teardown video",
+  "url": "guides/shoot-the-teardown-video.html",
+  "type": "Field guide",
+  "description": "Record the proof before you write the edit. A paper edit, real screen capture and a clear limit beat a cinematic montage with nothing behind it."
+ },
+ {
+  "title": "Publish a static evidence site",
+  "url": "guides/publish-a-static-evidence-site.html",
+  "type": "Field guide",
+  "description": "A portable page set with no database, no tracking scripts and no deployment surprise. Generate, inspect, link-check, then put it online."
+ },
+ {
+  "title": "Sell without hype",
+  "url": "guides/sell-without-hype.html",
+  "type": "Field guide",
+  "description": "The offer follows the proof. One buyer, one painful workflow, one measurable deliverable and no invented social proof."
+ },
+ {
+  "title": "Write a monthly field note",
+  "url": "guides/write-a-monthly-field-note.html",
+  "type": "Field guide",
+  "description": "One useful observation, one seam, one limit and a clear way to leave. A monthly note is a discipline, not a content quota."
+ }
+]

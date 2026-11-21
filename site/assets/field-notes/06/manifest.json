@@ -1,0 +1,22 @@
+{
+  "number": "06",
+  "slug": "redaction",
+  "title": "Redact the value. Keep the finding.",
+  "kicker": "The second pass before publication",
+  "dek": "A claim can be public without the secret that proved it. This note covers replacement at the source, the limits of a blur, and the edges that leak.",
+  "duration_seconds": 61.758,
+  "width": 1280,
+  "height": 720,
+  "audio": true,
+  "voice": "Microsoft George",
+  "voice_treatment": "George · brisk · en-GB",
+  "voice_base": "Microsoft George",
+  "pitch_ratio": 1.03,
+  "sound_design": "original low sine/pink-noise ambient bed, mixed under the voice",
+  "captions": "field-note.vtt",
+  "poster": "poster.png",
+  "video": "field-note.mp4",
+  "source_dossier": "REA-20261121-60b03488-28212",
+  "generated_at": "2026-11-21T09:15:18+00:00",
+  "note": "Original generated diagrams, local synthetic voiceover and an original ambient bed. Not a recorded teardown. Not uploaded."
+}

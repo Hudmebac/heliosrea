@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-GB" data-root="../"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#070a0f">
+<title>Run the evidence ladder — The Teardown Room</title>
+<meta name="description" content="A repeatable sequence of probes, with statuses that tell you what is known, what is empty and what failed. Depth is earned, not assumed.">
+<meta property="og:title" content="Run the evidence ladder">
+<meta property="og:description" content="A repeatable sequence of probes, with statuses that tell you what is known, what is empty and what failed. Depth is earned, not assumed.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/site.js" defer></script></head>
+<body><a class="skip" href="#main">Skip to content</a><div class="wrap">
+<header class="top"><div class="brand"><a href="../index.html"><b>THE TEARDOWN ROOM</b></a>
+<span>Open the box. Map the system. Show the seam.</span></div>
+<nav class="nav" aria-label="Primary navigation"><a class="nav-start" href="../start/">Start here</a><a class="" href="../evidence/">Evidence</a><a class="" href="../facts/">Fact files</a><a class="on" href="../guides/">Field guides</a><a class="" href="../method/">Method</a><a class="" href="../watch/">Field notes</a><a class="" href="../proof/">Proof</a><a class="" href="../newsletter/">Monthly notes</a><a class="" href="../pricing/">Support</a><button class="nav-search" type="button" data-search-open aria-haspopup="dialog" aria-controls="search-panel">Search <kbd>/</kbd></button><a class="nav-buy" href="https://buy.stripe.com/bJe9AS53ybBVfZv6R14wM03" rel="noreferrer">Support · £5</a></nav></header>
+<main id="main" tabindex="-1">
+<div class="breadcrumb"><a href="../guides/">Field guides</a> / <a href="../method/">Method</a></div>
+<span class="eyebrow">Core method · 9 min</span><h1>Run the evidence ladder</h1>
+<p class="dek">A repeatable sequence of probes, with statuses that tell you what is known, what is empty and what failed. Depth is earned, not assumed.</p>
+<div class="meta"><span class="chip">field guide</span><span class="chip">operator level</span><span class="chip">checklist at the end</span></div>
+<div class="toc"><b>In this guide</b><ol><li><a href="#s1">The ladder is a sequence, not a scan</a></li><li><a href="#s2">Learn the five statuses</a></li><li><a href="#s3">Use the real command line</a></li><li><a href="#s4">Do not scale a weak run</a></li></ol></div>
+<section class="prose-block" id="s1"><h2>The ladder is a sequence, not a scan</h2><p>The evidence ladder moves from the outside in: identify the surface, read the manifests and documentation, map the code or request surface, then inspect the artifact or runtime only when the earlier steps justify it.</p><p>Each probe writes a status and a result. The next probe is chosen from the result, not from a checklist of impressive-sounding tools.</p></section><section class="prose-block" id="s2"><h2>Learn the five statuses</h2><p>The status is part of the evidence. A negative result is still a recorded result, and it changes what a reader should believe.</p><ul><li>Signal: the probe returned a usable observation with a locator.</li><li>Empty: the probe ran and found nothing to report, such as no manifest or no git history.</li><li>Error: the probe failed; record the error and decide whether a retry is safe.</li><li>Skipped: the probe was deliberately not run, often because the network was disabled.</li><li>Retry: the probe was attempted again after a transient failure; say why.</li></ul></section><section class="prose-block" id="s3"><h2>Use the real command line</h2><p>Run the engine against the scoped target. Start offline unless the scope explicitly allows network calls. Use the server when you want the console, but keep the dossier as the source of truth.</p><ul><li>python rea/engine.py &lt;target&gt; --offline --json --depth deep</li><li>python rea/engine.py &lt;target&gt; --offline --depth shallow</li><li>python rea/server.py</li><li>python -m unittest discover -s rea -p &quot;test_*.py&quot;</li></ul></section><section class="prose-block" id="s4"><h2>Do not scale a weak run</h2><p>More probes do not rescue a bad scope. If the target is a source tree, a source read is the right depth. If it is a closed device, a firmware and runtime path may be justified. If the evidence is empty, write the next question instead of adding noise.</p><p>A deep run should leave a probe ledger a stranger can read. If the ledger cannot explain why a step happened, the step is not evidence yet.</p></section>
+<div class="card"><h3>Use it on the next file</h3>
+<p>Open the <a href="../method/">method</a>, run the gate, then publish from the <a href="../evidence/">evidence library</a>. The guide is a route, not a substitute for authorisation.</p>
+<a class="btn" href="../method/">Read the method</a><a class="btn" href="../facts/">Open the fact files</a></div>
+<div class="guide-nav"><a href="scope-and-authorise.html"><span>Previous guide</span><b>← Scope and authorise a teardown</b></a><a class="next" href="redact-before-you-publish.html"><span>Next guide</span><b>Redact secrets and private data →</b></a></div></main>
+<footer class="foot"><div class="footer-grid">
+<div><b>THE TEARDOWN ROOM</b><p>Evidence-led teardowns of devices, apps and workflows we own or have written permission to inspect. Every claim carries a finding ID, a locator, a confidence and a stated limit.</p></div>
+<div><h4>Read</h4><a href="../start/">Start here</a><a href="../evidence/">Evidence library</a><a href="../facts/">Fact files</a><a href="../proof/">Proof</a></div>
+<div><h4>Learn</h4><a href="../guides/">Field guides</a><a href="../method/">Method</a><a href="../glossary/">Glossary</a><a href="../crew/">Crew</a></div>
+<div><h4>Room</h4><a href="../watch/">Ten field notes</a><a href="../newsletter/">Monthly notes</a><a href="../pricing/">Support · £5</a><a href="mailto:mysurnameandfirsname@gmail.com">Email the room</a></div>
+</div><p class="footer-rule">No dossier, no publication. Fixtures, demos, example hosts and private network captures are refused. Secret-shaped values are redacted before publication. The £5 link is a public Stripe Payment Link; no secret key is stored in this site. The field-note list is opt-in and never sold.</p></footer>
+<div class="search-panel" id="search-panel" hidden>
+<div class="search-box" role="dialog" aria-modal="true" aria-labelledby="search-title">
+<div class="search-head"><b id="search-title">Search the room</b><button type="button" class="search-close" data-search-close aria-label="Close search">Close</button></div>
+<label class="sr-only" for="search-input">Search pages and fact files</label>
+<input id="search-input" type="search" placeholder="Try: locator, seam, redaction, glossary…" autocomplete="off">
+<p class="search-hint">Search titles and descriptions across the evidence library, fact files, guides and method.</p>
+<div class="search-results" id="search-results" aria-live="polite"></div>
+</div></div>
+</div></body></html>

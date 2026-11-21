@@ -1,0 +1,22 @@
+{
+  "number": "05",
+  "slug": "the-empty-probe",
+  "title": "The empty probe is evidence",
+  "kicker": "How to read the probe ledger",
+  "dek": "Signal, empty, error, skipped, retry. The status is part of the finding. This note explains why a clean ledger includes the rows that found nothing.",
+  "duration_seconds": 73.384,
+  "width": 1280,
+  "height": 720,
+  "audio": true,
+  "voice": "Microsoft Susan",
+  "voice_treatment": "Susan · calm · en-GB",
+  "voice_base": "Microsoft Susan",
+  "pitch_ratio": 0.99,
+  "sound_design": "original low sine/pink-noise ambient bed, mixed under the voice",
+  "captions": "field-note.vtt",
+  "poster": "poster.png",
+  "video": "field-note.mp4",
+  "source_dossier": "REA-20261121-60b03488-28212",
+  "generated_at": "2026-11-21T09:15:12+00:00",
+  "note": "Original generated diagrams, local synthetic voiceover and an original ambient bed. Not a recorded teardown. Not uploaded."
+}

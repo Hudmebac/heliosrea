@@ -1,0 +1,17 @@
+file 'F:/HeliosREA/site/assets/field-notes/05/frames/01.png'
+duration 10.287688
+file 'F:/HeliosREA/site/assets/field-notes/05/frames/02.png'
+duration 9.471813
+file 'F:/HeliosREA/site/assets/field-notes/05/frames/03.png'
+duration 11.608313
+file 'F:/HeliosREA/site/assets/field-notes/05/frames/04.png'
+duration 9.062938
+file 'F:/HeliosREA/site/assets/field-notes/05/frames/05.png'
+duration 8.774500
+file 'F:/HeliosREA/site/assets/field-notes/05/frames/06.png'
+duration 9.195625
+file 'F:/HeliosREA/site/assets/field-notes/05/frames/07.png'
+duration 8.482812
+file 'F:/HeliosREA/site/assets/field-notes/05/frames/08.png'
+duration 6.499875
+file 'F:/HeliosREA/site/assets/field-notes/05/frames/08.png'

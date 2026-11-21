@@ -1,0 +1,4 @@
+# Netlify publishes the prebuilt evidence site committed under site/.
+# The local server regenerates it from dossiers; CI has no dossier store.
+[build]
+  publish = "site"

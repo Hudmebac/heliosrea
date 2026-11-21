@@ -1,0 +1,22 @@
+{
+  "number": "07",
+  "slug": "confidence",
+  "title": "Confidence is not a probability",
+  "kicker": "How to read the number",
+  "dek": "A confidence score is a recorded judgement, not a truth score. This note separates a direct observation from an inference and shows why the findings are never averaged.",
+  "duration_seconds": 62.106,
+  "width": 1280,
+  "height": 720,
+  "audio": true,
+  "voice": "Microsoft Hazel",
+  "voice_treatment": "Hazel · documentary · en-GB",
+  "voice_base": "Microsoft Hazel",
+  "pitch_ratio": 0.97,
+  "sound_design": "original low sine/pink-noise ambient bed, mixed under the voice",
+  "captions": "field-note.vtt",
+  "poster": "poster.png",
+  "video": "field-note.mp4",
+  "source_dossier": "REA-20261121-60b03488-28212",
+  "generated_at": "2026-11-21T09:15:23+00:00",
+  "note": "Original generated diagrams, local synthetic voiceover and an original ambient bed. Not a recorded teardown. Not uploaded."
+}

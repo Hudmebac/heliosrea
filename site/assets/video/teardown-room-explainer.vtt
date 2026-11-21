@@ -1,0 +1,28 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.780
+Let's start with one real file. Ten findings, and seven places where behaviour could change, in a source tree we own.
+
+00:00:07.780 --> 00:00:17.277
+The rule is simple. Evidence first, story second. Every claim keeps its ID, where to find it, how confident we are, and its limit.
+
+00:00:17.277 --> 00:00:24.246
+The target is a small source tree. Twelve files, three access modes, and written authorisation.
+
+00:00:24.246 --> 00:00:32.261
+The first finding is its shape. Four languages, no binaries. Think of it as a map, not a vulnerability.
+
+00:00:32.261 --> 00:00:43.150
+The first seam is the source. Take a baseline, change one module, then compare. A seam is only a place where change is possible. It is not a change we made.
+
+00:00:43.150 --> 00:00:52.155
+Ten records, seven seams, thirteen probes. No dossier, no publication. Fixtures and demos are refused.
+
+00:00:52.155 --> 00:01:01.083
+Here's the honest part. This says nothing about runtime beyond the probe. It is not a vulnerability claim, and it is not client work.
+
+00:01:01.083 --> 00:01:10.896
+The page also carries a receipt. A hash ties the story to the dossier. You don't need to memorise it. It is there so someone else can check.
+
+00:01:10.896 --> 00:01:17.607
+Read the evidence. Check the locator. Keep the limit. That is the room.

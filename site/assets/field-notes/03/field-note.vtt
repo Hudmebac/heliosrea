@@ -1,0 +1,25 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.845
+Start with the surface. Twelve files, four languages, and no binaries.
+
+00:00:07.845 --> 00:00:17.122
+Small is still evidence. The target is 688.5 kilobytes in a source tree we own.
+
+00:00:17.122 --> 00:00:26.360
+The first finding is a map. A map is not a vulnerability. It tells you where to look next.
+
+00:00:26.360 --> 00:00:34.772
+Four languages by extension. Python, Markdown, PNG and HTML.
+
+00:00:34.772 --> 00:00:43.690
+No binaries or containers. An empty result is still a finding, and it changes the next question.
+
+00:00:43.690 --> 00:00:52.676
+The recorded confidence is ninety-five percent. That is a strong observation, with a limit attached.
+
+00:00:52.676 --> 00:01:00.723
+Read the shape before the story. It tells you where depth is justified, and where it is not.
+
+00:01:00.723 --> 00:01:07.593
+Keep the limit. A map of the source does not prove runtime behaviour.

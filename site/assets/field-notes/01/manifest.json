@@ -1,0 +1,22 @@
+{
+  "number": "01",
+  "slug": "one-file",
+  "title": "One file, ten findings, seven seams",
+  "kicker": "The room in one pass",
+  "dek": "The opening brief. A small owned source tree, a recorded finding, a source seam and the limit. Start here if you want the shape of the room before the detail.",
+  "duration_seconds": 114.91,
+  "width": 1280,
+  "height": 720,
+  "audio": true,
+  "voice": "Microsoft Hazel",
+  "voice_treatment": "Hazel · measured · en-GB",
+  "voice_base": "Microsoft Hazel",
+  "pitch_ratio": 1.0,
+  "sound_design": "original low sine/pink-noise ambient bed, mixed under the voice",
+  "captions": "field-note.vtt",
+  "poster": "poster.png",
+  "video": "field-note.mp4",
+  "source_dossier": "REA-20261121-60b03488-28212",
+  "generated_at": "2026-11-21T09:14:50+00:00",
+  "note": "Original generated diagrams, local synthetic voiceover and an original ambient bed. Not a recorded teardown. Not uploaded."
+}

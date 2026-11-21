@@ -1,0 +1,19 @@
+{
+ "slug": "solar4you-rebuilt-83835",
+ "title": "solar4you [REBUILT] — evidence teardown",
+ "target": "solar4you [REBUILT]",
+ "dossier_id": "REA-20261121-afd06c73-83835",
+ "kind": "folder",
+ "kind_label": "Local source tree",
+ "verdict": "2 change surface(s) mapped across 2 access mode(s): Source, Protocol.",
+ "findings": 7,
+ "edits": 2,
+ "probes": 13,
+ "confidence": 0.43,
+ "digest": "75715d20efcfe131431bff8f0dbd54fc604b25495620dbf053e6ce60bbd4ccaf",
+ "published_at": "2026-11-21T10:03:41+00:00",
+ "page_url": "/published/publications/solar4you-rebuilt-83835/",
+ "evidence_url": "/published/publications/solar4you-rebuilt-83835/evidence.md",
+ "video_url": "/published/publications/solar4you-rebuilt-83835/video-script.md",
+ "card_url": "/published/publications/solar4you-rebuilt-83835/card.svg"
+}

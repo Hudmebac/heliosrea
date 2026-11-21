@@ -1,0 +1,22 @@
+{
+  "number": "02",
+  "slug": "the-gate",
+  "title": "The gate: no dossier, no publication",
+  "kicker": "What has to be true before a file goes public",
+  "dek": "A finished run is not automatically a story. This note walks the publication gate: the records, the seam, the real target and the human sign-off.",
+  "duration_seconds": 60.591,
+  "width": 1280,
+  "height": 720,
+  "audio": true,
+  "voice": "Microsoft George",
+  "voice_treatment": "George · forward · en-GB",
+  "voice_base": "Microsoft George",
+  "pitch_ratio": 1.02,
+  "sound_design": "original low sine/pink-noise ambient bed, mixed under the voice",
+  "captions": "field-note.vtt",
+  "poster": "poster.png",
+  "video": "field-note.mp4",
+  "source_dossier": "REA-20261121-60b03488-28212",
+  "generated_at": "2026-11-21T09:14:56+00:00",
+  "note": "Original generated diagrams, local synthetic voiceover and an original ambient bed. Not a recorded teardown. Not uploaded."
+}

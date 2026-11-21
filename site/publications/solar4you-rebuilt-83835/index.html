@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>solar4you [REBUILT] — evidence teardown — The Teardown Room</title>
+<meta name="description" content="2 change surface(s) mapped across 2 access mode(s): Source, Protocol.">
+<meta property="og:title" content="solar4you [REBUILT] — evidence teardown">
+<meta property="og:description" content="2 change surface(s) mapped across 2 access mode(s): Source, Protocol.">
+<meta property="og:image" content="card.svg">
+<link rel="stylesheet" href="../../assets/site.css"></head>
+<body><div class="wrap">
+<header class="top"><div class="brand"><b>THE TEARDOWN ROOM</b><span>Evidence file · The Teardown Room</span></div>
+<nav class="nav"><a href="../../evidence/">Evidence library</a><a href="../../facts/">Fact files</a>
+<a href="../../guides/">Guides</a><a href="../../proof/">Proof</a><a href="../../newsletter/">Field notes</a><a href="video-script.md">Video script</a>
+<a href="evidence.md">Appendix</a></nav></header>
+<main>
+<span class="eyebrow">Evidence file · Local source tree</span>
+<h1>solar4you [REBUILT] — evidence teardown</h1>
+<p class="dek">2 change surface(s) mapped across 2 access mode(s): Source, Protocol.</p>
+<div class="meta">
+<span class="chip">dossier <b>REA-20261121-afd06c73-83835</b></span>
+<span class="chip">evidence <b>7</b></span>
+<span class="chip">seams <b>2</b></span>
+<span class="chip">confidence <b>43%</b></span>
+<span class="chip">scope <b>authorised</b></span>
+</div>
+<div class="note"><b>Publication gate:</b> this file was built from a completed, authorised
+dossier. Fixture and demo dossiers are refused. The original dossier hash is
+<span class="hash">75715d20efcfe131431bff8f0dbd54fc604b25495620dbf053e6ce60bbd4ccaf</span>.</div>
+
+<h2>What the evidence shows</h2>
+<p>2 change surface(s) mapped across 2 access mode(s): Source, Protocol.</p>
+<p class="small">Selected production evidence is shown below. The full record, including test-only
+observations and duplicates, is in the <a href="evidence.md">evidence appendix</a>.</p>
+<div class="proof"><b>4 files · 22.9 KB <span class="tag">F-001</span></b><p class="small">Languages by extension: .js, .html, .md, .css. Top folders: flat tree. Binaries/containers: 0.</p><small> · confidence 95%</small></div><div class="proof"><b>Remote dependency · www.w3.org <span class="tag">F-005</span></b><p class="small">http://www.w3.org/2000/svg</p><small> · confidence 90%</small></div><div class="proof"><b>1 request surface(s) <span class="tag">F-004</span></b><p class="small">Absolute hosts: http://www.w3.org/2000/svg. Client calls: none</p><small> · confidence 85%</small></div><div class="proof"><b>Entry-point candidates <span class="tag">F-002</span></b><p class="small">index.html</p><small> · confidence 80%</small></div><div class="proof"><b>README.md · 25 lines <span class="tag">F-006</span></b><p class="small">Headings: Solar4You, Run, Features, Data and boundaries, Verify. Commands: none. Claims: none</p><small>README.md · confidence 80%</small></div>
+
+<h2>Where the system can change</h2>
+<p class="small">A change surface is a place where behaviour can be altered or repaired. It is not
+a claim that a change was made.</p>
+<table><thead><tr><th>ID</th><th>Locator / action</th><th>Risk</th></tr></thead>
+<tbody><tr><td><code>E-01</code></td><td><code>solar4you [REBUILT]</code><br>Edit the source tree directly; take a baseline test first, then patch the smallest module.</td><td><span class="tag low">low</span><br><span class="small">90%</span></td></tr><tr><td><code>E-02</code></td><td><code>http://www.w3.org/2000/svg</code><br>Reimplement or intercept the client protocol at the request boundary; keep it read-only until authorised.</td><td><span class="tag medium">medium</span><br><span class="small">80%</span></td></tr></tbody></table>
+
+<h2>What the evidence does not establish</h2>
+<ul><li><b>Read manifests and config</b> — No recognisable manifest or config file.</li><li><b>Check package provenance</b> — No package names to resolve.</li><li><b>Learn from GitHub</b> — No GitHub repository identified for this target.</li><li><b>Read repository history</b> — Not a git working tree.</li><li><b>Find the test harness</b> — No verification harness found.</li><li><b>Parse the artifact</b> — No compiled artifact at this target.</li><li><b>Map security controls</b> — No compiled artifact to map controls from.</li><li><b>Extract strings</b> — No compiled artifact to pull strings from.</li><li><b>Map firmware containers</b> — No firmware/container image at this target.</li></ul>
+<h3>Next evidence questions</h3><ol><li>No manifest: read the binary import table and strings to infer the runtime. <span class="small">because Read manifests and config returned empty</span></li><li>Package unresolved: treat it as vendored and inspect the local copy. <span class="small">because Check package provenance returned empty</span></li><li>No public repo: search GitHub for unique strings from the target to locate upstream. <span class="small">because Learn from GitHub returned empty</span></li><li>No history: identify the upstream from strings or a remote config, then check GitHub. <span class="small">because Read repository history returned empty</span></li><li>No harness: record a baseline behaviour script before changing anything. <span class="small">because Find the test harness returned empty</span></li></ol>
+
+<h2>Scope and method</h2>
+<div class="card"><div class="grid">
+<div><h3>Target</h3><p>solar4you [REBUILT]</p>
+<h3>Scope</h3><p>Not stated in the dossier.</p></div>
+<div><h3>Authorisation</h3><p>Operator attested ownership or written permission. Passive,
+non-destructive probing only.</p><h3>Finished</h3><p>2026-11-21T09:23:03</p></div>
+</div><h3>Probe ledger</h3>
+<table><thead><tr><th>Probe</th><th>Status</th><th>Recorded result</th></tr></thead>
+<tbody><tr><td>Map the surface</td><td>signal</td><td>4 files, 4 language signals, 0 binaries.</td></tr><tr><td>Read manifests and config</td><td>empty</td><td>No recognisable manifest or config file.</td></tr><tr><td>Check package provenance</td><td>empty</td><td>No package names to resolve.</td></tr><tr><td>Learn from GitHub</td><td>empty</td><td>No GitHub repository identified for this target.</td></tr><tr><td>Map code structure</td><td>signal</td><td>2 files, 0 route(s), 0 switch(es).</td></tr><tr><td>Map request surface</td><td>signal</td><td>1 request sites, 1 hosts.</td></tr><tr><td>Read repository history</td><td>empty</td><td>Not a git working tree.</td></tr><tr><td>Mine documentation</td><td>signal</td><td>2 document(s) mined.</td></tr><tr><td>Find the test harness</td><td>empty</td><td>No verification harness found.</td></tr><tr><td>Parse the artifact</td><td>empty</td><td>No compiled artifact at this target.</td></tr><tr><td>Map security controls</td><td>empty</td><td>No compiled artifact to map controls from.</td></tr><tr><td>Extract strings</td><td>empty</td><td>No compiled artifact to pull strings from.</td></tr><tr><td>Map firmware containers</td><td>empty</td><td>No firmware/container image at this target.</td></tr></tbody></table></div>
+<h2>Sources learned from</h2><ul><li><b>Project documentation</b> — README.md</li></ul>
+
+<h2>Watch the teardown</h2>
+<p>The video script is a paper edit built from this dossier: cold open, scope, evidence, seam,
+proof, limits and close. It is not a rendered video. Use the shots that are actually available.</p>
+<a class="btn" href="video-script.md">Read the shot script</a>
+<a class="btn" href="evidence.md">Open the evidence appendix</a>
+<a class="btn" href="card.svg">Open the evidence card</a>
+
+<h2>Go deeper</h2>
+<p>If this evidence file is useful, you can leave an optional one-time £5 donation or request the
+monthly field notes. There is no paid pack and no subscription. The donation buys no deliverable.</p>
+<a class="btn gold" href="https://buy.stripe.com/bJe9AS53ybBVfZv6R14wM03" rel="noreferrer">Leave a £5 donation</a>
+<a class="btn" href="../../newsletter/">Request monthly field notes</a>
+<p class="small">No result or income is guaranteed. Read the evidence and the limits before
+deciding whether the work is useful to you.</p>
+</main>
+<footer class="foot">Published from the REA Engine Room. Evidence IDs, locators, confidence and the
+dossier hash are retained. Secret-shaped values are redacted before publication. This page is
+generated from a local dossier; it is not an exploit write-up or an offer of unauthorised access.</footer>
+</div></body></html>

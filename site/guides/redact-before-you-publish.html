@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-GB" data-root="../"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#070a0f">
+<title>Redact secrets and private data — The Teardown Room</title>
+<meta name="description" content="Publication is a second pass. Replace sensitive values at the source, keep the finding, and never rely on a blur that can be reversed.">
+<meta property="og:title" content="Redact secrets and private data">
+<meta property="og:description" content="Publication is a second pass. Replace sensitive values at the source, keep the finding, and never rely on a blur that can be reversed.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/site.js" defer></script></head>
+<body><a class="skip" href="#main">Skip to content</a><div class="wrap">
+<header class="top"><div class="brand"><a href="../index.html"><b>THE TEARDOWN ROOM</b></a>
+<span>Open the box. Map the system. Show the seam.</span></div>
+<nav class="nav" aria-label="Primary navigation"><a class="nav-start" href="../start/">Start here</a><a class="" href="../evidence/">Evidence</a><a class="" href="../facts/">Fact files</a><a class="on" href="../guides/">Field guides</a><a class="" href="../method/">Method</a><a class="" href="../watch/">Field notes</a><a class="" href="../proof/">Proof</a><a class="" href="../newsletter/">Monthly notes</a><a class="" href="../pricing/">Support</a><button class="nav-search" type="button" data-search-open aria-haspopup="dialog" aria-controls="search-panel">Search <kbd>/</kbd></button><a class="nav-buy" href="https://buy.stripe.com/bJe9AS53ybBVfZv6R14wM03" rel="noreferrer">Support · £5</a></nav></header>
+<main id="main" tabindex="-1">
+<div class="breadcrumb"><a href="../guides/">Field guides</a> / <a href="../method/">Method</a></div>
+<span class="eyebrow">Safety gate · 7 min</span><h1>Redact secrets and private data</h1>
+<p class="dek">Publication is a second pass. Replace sensitive values at the source, keep the finding, and never rely on a blur that can be reversed.</p>
+<div class="meta"><span class="chip">field guide</span><span class="chip">operator level</span><span class="chip">checklist at the end</span></div>
+<div class="toc"><b>In this guide</b><ol><li><a href="#s1">Redaction is part of the evidence chain</a></li><li><a href="#s2">The classes to check</a></li><li><a href="#s3">Replace, do not blur</a></li><li><a href="#s4">A redaction check you can repeat</a></li></ol></div>
+<section class="prose-block" id="s1"><h2>Redaction is part of the evidence chain</h2><p>A finding can be published without the value that proves it. Keep the finding ID, the locator, the confidence and the shape of the observation. Replace the secret-shaped value with a marker such as [redacted].</p><p>Do not publish a screenshot and hope the important part is unreadable. Crop, replace or recreate the image. Metadata, window titles, file paths and notification popups can leak more than the main content.</p></section><section class="prose-block" id="s2"><h2>The classes to check</h2><p>Build a redaction pass into the publication gate. The operator should be able to say what was removed and why without reproducing the value.</p><ul><li>Credentials: keys, tokens, passwords, cookies, session IDs and recovery codes.</li><li>Identifiers: serial numbers, MAC addresses, device IDs, account IDs and licence keys.</li><li>People: names, email addresses, phone numbers, faces and customer records.</li><li>Infrastructure: private IPs, SSIDs, hostnames, internal paths and network topology.</li><li>Commercial: pricing, supplier terms, unreleased plans and third-party code you cannot license.</li></ul></section><section class="prose-block" id="s3"><h2>Replace, do not blur</h2><p>Source-level redaction is testable. The public page, the appendix, the video script and the card should all be generated from the redacted record. If a value appears in the dossier, mark it for redaction before packaging.</p><p>Check filenames and alt text too. A file called customer-acme-token.txt is still a leak even if the pixels are clean.</p></section><section class="prose-block" id="s4"><h2>A redaction check you can repeat</h2><p>Before publishing, search the generated output for the known sensitive values and their prefixes. Then read the page as a stranger. If you would not put it on a screen in a public room, do not put it on the site.</p><ul><li>Search the public HTML, Markdown and SVG for known values.</li><li>Inspect screenshots at full size, not in a thumbnail.</li><li>Remove EXIF and source-file metadata from images.</li><li>Record the redaction decision in the dossier, not in a private chat.</li><li>If in doubt, omit the value and keep the finding.</li></ul></section>
+<div class="card"><h3>Use it on the next file</h3>
+<p>Open the <a href="../method/">method</a>, run the gate, then publish from the <a href="../evidence/">evidence library</a>. The guide is a route, not a substitute for authorisation.</p>
+<a class="btn" href="../method/">Read the method</a><a class="btn" href="../facts/">Open the fact files</a></div>
+<div class="guide-nav"><a href="run-the-evidence-ladder.html"><span>Previous guide</span><b>← Run the evidence ladder</b></a><a class="next" href="verify-a-dossier.html"><span>Next guide</span><b>Verify a dossier before it becomes public →</b></a></div></main>
+<footer class="foot"><div class="footer-grid">
+<div><b>THE TEARDOWN ROOM</b><p>Evidence-led teardowns of devices, apps and workflows we own or have written permission to inspect. Every claim carries a finding ID, a locator, a confidence and a stated limit.</p></div>
+<div><h4>Read</h4><a href="../start/">Start here</a><a href="../evidence/">Evidence library</a><a href="../facts/">Fact files</a><a href="../proof/">Proof</a></div>
+<div><h4>Learn</h4><a href="../guides/">Field guides</a><a href="../method/">Method</a><a href="../glossary/">Glossary</a><a href="../crew/">Crew</a></div>
+<div><h4>Room</h4><a href="../watch/">Ten field notes</a><a href="../newsletter/">Monthly notes</a><a href="../pricing/">Support · £5</a><a href="mailto:mysurnameandfirsname@gmail.com">Email the room</a></div>
+</div><p class="footer-rule">No dossier, no publication. Fixtures, demos, example hosts and private network captures are refused. Secret-shaped values are redacted before publication. The £5 link is a public Stripe Payment Link; no secret key is stored in this site. The field-note list is opt-in and never sold.</p></footer>
+<div class="search-panel" id="search-panel" hidden>
+<div class="search-box" role="dialog" aria-modal="true" aria-labelledby="search-title">
+<div class="search-head"><b id="search-title">Search the room</b><button type="button" class="search-close" data-search-close aria-label="Close search">Close</button></div>
+<label class="sr-only" for="search-input">Search pages and fact files</label>
+<input id="search-input" type="search" placeholder="Try: locator, seam, redaction, glossary…" autocomplete="off">
+<p class="search-hint">Search titles and descriptions across the evidence library, fact files, guides and method.</p>
+<div class="search-results" id="search-results" aria-live="polite"></div>
+</div></div>
+</div></body></html>

@@ -1,0 +1,22 @@
+{
+  "number": "04",
+  "slug": "the-seam",
+  "title": "A seam is a place, not a change",
+  "kicker": "E-01 and the baseline habit",
+  "dek": "The source is the first change surface. The safe path is baseline, edit one module, compare. This note explains what E-01 records and what it still does not prove.",
+  "duration_seconds": 58.928,
+  "width": 1280,
+  "height": 720,
+  "audio": true,
+  "voice": "Microsoft George",
+  "voice_treatment": "George · close · en-GB",
+  "voice_base": "Microsoft George",
+  "pitch_ratio": 0.98,
+  "sound_design": "original low sine/pink-noise ambient bed, mixed under the voice",
+  "captions": "field-note.vtt",
+  "poster": "poster.png",
+  "video": "field-note.mp4",
+  "source_dossier": "REA-20261121-60b03488-28212",
+  "generated_at": "2026-11-21T09:15:07+00:00",
+  "note": "Original generated diagrams, local synthetic voiceover and an original ambient bed. Not a recorded teardown. Not uploaded."
+}

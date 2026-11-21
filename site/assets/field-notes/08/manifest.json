@@ -1,0 +1,22 @@
+{
+  "number": "08",
+  "slug": "the-receipt",
+  "title": "The receipt is not the proof",
+  "kicker": "What the hash can and cannot do",
+  "dek": "The page carries a SHA-256 hash of the dossier. It ties the story to a record. It does not prove that every conclusion is correct. This note keeps the distinction clear.",
+  "duration_seconds": 58.196,
+  "width": 1280,
+  "height": 720,
+  "audio": true,
+  "voice": "Microsoft Susan",
+  "voice_treatment": "Susan · measured · en-GB",
+  "voice_base": "Microsoft Susan",
+  "pitch_ratio": 1.0,
+  "sound_design": "original low sine/pink-noise ambient bed, mixed under the voice",
+  "captions": "field-note.vtt",
+  "poster": "poster.png",
+  "video": "field-note.mp4",
+  "source_dossier": "REA-20261121-60b03488-28212",
+  "generated_at": "2026-11-21T09:15:28+00:00",
+  "note": "Original generated diagrams, local synthetic voiceover and an original ambient bed. Not a recorded teardown. Not uploaded."
+}

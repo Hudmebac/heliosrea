@@ -1,0 +1,22 @@
+{
+  "number": "03",
+  "slug": "the-shape",
+  "title": "The shape of the file",
+  "kicker": "F-001, without the fog",
+  "dek": "Twelve files, four languages and no binaries. A surface map can be useful without becoming a vulnerability claim. This note shows what the first finding actually records.",
+  "duration_seconds": 67.593,
+  "width": 1280,
+  "height": 720,
+  "audio": true,
+  "voice": "Microsoft George",
+  "voice_treatment": "George · low · en-GB",
+  "voice_base": "Microsoft George",
+  "pitch_ratio": 0.94,
+  "sound_design": "original low sine/pink-noise ambient bed, mixed under the voice",
+  "captions": "field-note.vtt",
+  "poster": "poster.png",
+  "video": "field-note.mp4",
+  "source_dossier": "REA-20261121-60b03488-28212",
+  "generated_at": "2026-11-21T09:15:01+00:00",
+  "note": "Original generated diagrams, local synthetic voiceover and an original ambient bed. Not a recorded teardown. Not uploaded."
+}
